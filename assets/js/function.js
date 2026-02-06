@@ -45,6 +45,7 @@ $(document).on("submit", "#form", function(e){
 });
 
 // WCAG 2.5.2: Explicitly prevent any mousedown/touchstart events on submit button
+// WCAG 3.2.1: Submit button does not have focus event listeners - no context change on focus
 // This ensures the function is never triggered on down-event
 $(document).on("mousedown touchstart", "#submit-button", function(e){
 	// Do nothing on down-event - only up-event (click/submit) should trigger submission
@@ -161,6 +162,8 @@ $(this).removeClass("require");
  
  
  
+ // WCAG 3.2.1: Form validation uses 'change' event, not 'focus' - prevents context change on focus
+ // Enable/disable submit button based on form validity
  $("body").on("change", "form input,form textarea", function(){
 		
 	var length = $(".require").length;
