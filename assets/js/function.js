@@ -1,40 +1,40 @@
-$(document).on("click","#send:not(#send.disabled)", function(){ 
-
-		var company = $("#inc").val();
-		var name = $("#name").val();
-		var mail = $("#mail").val();
-		var message = $("#textarea").val();
-//VA();
-
-
-
-$.ajax({
-   type: "POST",
-   url: "contact/sendmail.php",
-   data: {company:company,name:name,mail:mail,message:message},
-   success: function(msg){
-    $("html").addClass("msg");
-   },
-   complete: function(){
-	   setTimeout(function(){
-		$("html").removeClass("msg");
-	$("body,html").stop().animate({scrollTop:0},300);
-	$("html").addClass("complete");
-		},2000);
+// WCAG 2.5.1: Use form submit event instead of custom div click
+$(document).on("submit", "#form", function(e){ 
+	e.preventDefault(); // Prevent default form submission
 	
-	setTimeout(function(){
-		
-	$("html").removeClass("complete");
-		},8000);
-		
-   }
+	// Check if form is valid (no required fields)
+	var requiredLength = $(".require").length;
+	if (requiredLength > 0) {
+		return false; // Don't submit if there are required fields
+	}
 
- });
- 
+	var company = $("#inc").val();
+	var name = $("#name").val();
+	var mail = $("#mail").val();
+	var message = $("#textarea").val();
 
-	
+	$.ajax({
+		type: "POST",
+		url: "contact/sendmail.php",
+		data: {company:company,name:name,mail:mail,message:message},
+		success: function(msg){
+			$("html").addClass("msg");
+		},
+		complete: function(){
+			setTimeout(function(){
+				$("html").removeClass("msg");
+				$("body,html").stop().animate({scrollTop:0},300);
+				$("html").addClass("complete");
+			},2000);
+			
+			setTimeout(function(){
+				$("html").removeClass("complete");
+			},8000);
+		}
+	});
 
-	});	
+	return false;
+});	
 	
 	function VA() {
 		
@@ -148,9 +148,9 @@ $(this).removeClass("require");
 		
 	var length = $(".require").length;
 	if( length == 0 ){
-		$("#send").removeClass("disabled");
+		$("#submit-button").prop("disabled", false).css("opacity", "1");
 	}else {
-		$("#send").addClass("disabled");
+		$("#submit-button").prop("disabled", true).css("opacity", "0.5");
 	}
 	
 	
