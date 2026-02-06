@@ -162,3 +162,18 @@ transition: all 0.4s cubic-bezier(.07,.91,.14,.84) 0s;
 
 .error { color:#E81B1F!important; display:block; }
 .kiyaku label.error { margin:0; display:block;  }
+
+/* WCAG 3.3.1: Error Identification - Visual styling for error messages and required fields */
+.error-message {
+	display: none;
+	color: #E81B1F;
+	font-size: 14px;
+	margin-top: 5px;
+	font-weight: normal;
+}
+
+.required-mark {
+	color: #E81B1F;
+	margin-left: 4px;
+	font-weight: bold;
+}

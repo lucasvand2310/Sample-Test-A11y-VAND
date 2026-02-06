@@ -87,44 +87,43 @@ $(this).removeClass("require");
  
  
  
+ 	 // WCAG 3.3.1: Error Identification - Display error message for required field
 	 $("body").on("change keyup", "#name", function(){
 	var length = $(this).val().length;
 	if( length >=1 ){
 		
 		
 	$(this).removeClass("require");
+		$("#name-error").text("").hide();
 		
 	}else {
 		$(this).addClass("require");
+		$("#name-error").text("お名前を入力してください。").show().css({"color":"red", "font-size":"14px", "margin-top":"5px", "display":"block"});
 	}
 	
 	
  });
- 
- 
-		
+ 		
+	// WCAG 3.2.1: Using 'change' event instead of 'focus' to prevent context change on focus
+	// WCAG 3.3.1: Email validation with descriptive error messages
+	// Email validation only triggers when user enters/changes input, not when field receives focus
 	$("body").on("change", "#mail", function(){
 	var length = $(this).val().length;
 	if( length >=1 ){
 		
 		if(!$(this).val().match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)){
-			$(this).next().next(".error").remove();
-  $(this).next().after("<div class='error'>不正なメールアドレスです</div>");
+			$("#mail-error").text("正しいメールアドレスを入力してください。").show().css({"color":"red", "font-size":"14px", "margin-top":"5px", "display":"block"});
   $(this).addClass("require error");
-		$("#mail+div span").text("");
   }else {
 	  $(this).removeClass("require error");
-		var Confirm =$(this).val();
-		$("#mail+div span").text(Confirm);
-		$(this).next().next(".error").remove();
+		$("#mail-error").text("").hide();
   }
   
 		
 	}else {
 		$(this).addClass("require");
 		$(this).removeClass("error");
-		$("#mail+div span").text("");
-		$(this).next().next(".error").remove();
+		$("#mail-error").text("メールアドレスを入力してください。").show().css({"color":"red", "font-size":"14px", "margin-top":"5px", "display":"block"});
 	}
 	
 
@@ -133,29 +132,25 @@ $(this).removeClass("require");
  
  
  
- 
+ // WCAG 3.2.1: Using 'change keyup' events instead of 'focus' to prevent context change on focus
+ // WCAG 3.3.1: Textarea validation with descriptive error messages
  $("body").on("change keyup", "#textarea", function(){
 	var length = $(this).val().length;
 	if( length >=1 ){
 		
 		if($(this).val().match(/[<(.*)>.*<\/\1>]/)){
-			$(this).next().next(".error").remove();
-  $(this).next().after("<div class='error'>HTMLコードは入力できません</div>");
+			$("#textarea-error").text("HTMLコードは入力できません").show().css({"color":"red", "font-size":"14px", "margin-top":"5px", "display":"block"});
   $(this).addClass("require error");
-		$("#message+div span").text("");
   }else {
 	  $(this).removeClass("require error");
-		var Confirm =$(this).val();
-		$("#message+div span").text(Confirm);
-		$(this).next().next(".error").remove();
+		$("#textarea-error").text("").hide();
   }
   
 		
 	}else {
 		$(this).addClass("require");
 		$(this).removeClass("error");
-		$("#message+div span").text("");
-		$(this).next().next(".error").remove();
+		$("#textarea-error").text("").hide();
 	}
 	
 	

@@ -190,10 +190,13 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
 
 <!-- WCAG 3.2.1: No Change on Focus - All form fields have proper labels and do not trigger context changes on focus -->
 <form id="form">
-<p class="label"><label for="name">お名前</label><input name="name" type="text" class="require" id="name" autocomplete="name" aria-label="お名前"></p>
+<!-- WCAG 3.3.1: Error Identification - Error messages are provided for all required fields -->
+<p class="label"><label for="name">お名前<span class="required-mark" aria-label="必須">*</span></label><input name="name" type="text" class="require" id="name" autocomplete="name" aria-label="お名前" aria-required="true" aria-describedby="name-error"><span id="name-error" class="error-message" role="alert" aria-live="polite"></span></p>
 <p class="label"><label for="inc">会社名</label><input name="inc" type="text" id="inc" autocomplete="organization" aria-label="会社名"></p>
-<p class="label"><label for="mail">メールアドレス</label><input name="mail" type="email" class="require" id="mail" inputmode="email" autocomplete="email" aria-label="メールアドレス"></p>
-<p class="label"><label for="textarea">お問い合わせ内容</label><textarea name="textarea" maxlength="500" id="textarea" aria-label="お問い合わせ内容"></textarea></p>
+<!-- WCAG 3.2.1: Email input does not trigger context changes on focus. Uses change event for validation only. -->
+<p class="label"><label for="mail">メールアドレス<span class="required-mark" aria-label="必須">*</span></label><input name="mail" type="email" class="require" id="mail" inputmode="email" autocomplete="email" aria-label="メールアドレス" aria-required="true" aria-describedby="mail-error"><span id="mail-error" class="error-message" role="alert" aria-live="polite"></span></p>
+<!-- WCAG 3.2.1: Textarea does not trigger context changes on focus. Uses change/keyup events for validation only. -->
+<p class="label"><label for="textarea">お問い合わせ内容</label><textarea name="textarea" maxlength="500" id="textarea" aria-label="お問い合わせ内容" aria-describedby="textarea-error"></textarea><span id="textarea-error" class="error-message" role="alert" aria-live="polite"></span></p>
 
 
 <div class="label relative kiyaku">
