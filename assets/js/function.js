@@ -1,7 +1,13 @@
 // WCAG 2.5.1: Use form submit event instead of custom div click
 // WCAG 2.5.2: Submit event triggers on up-event (mouseup/click), not down-event (mousedown)
 //             This allows users to cancel by moving pointer away before releasing
-$(document).on("submit", "#form", function(e){ 
+// WCAG 2.5.4: Motion Actuation - This website does NOT use device motion events.
+//             All functionality is operable via standard UI components only.
+//             No devicemotion, deviceorientation, or gesture events are implemented.
+// WCAG 3.2.1: On Focus - No context changes occur when input fields receive focus.
+//             All event listeners use 'change' and 'keyup' events, NOT 'focus' events.
+//             This ensures users can navigate through form fields without unexpected behavior.
+$(document).on("submit", "#form", function(e){
 	e.preventDefault(); // Prevent default form submission
 	
 	// Check if form is valid (no required fields)
@@ -58,7 +64,8 @@ $(this).removeClass("require");
 	
 	});	
 		
-			$("body").on("change keyup", "#inc", function(){
+		// WCAG 3.2.1: Using 'change keyup' events instead of 'focus' to prevent context change on focus
+		$("body").on("change keyup", "#inc", function(){
 	var length = $(this).val().length;
 	
 	if( length >=1 ){
