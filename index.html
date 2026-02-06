@@ -199,7 +199,9 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
 <div class="label relative kiyaku">
 <h3 class="kiyaku">個人情報の取扱いについて</h3>
 <p><a href="/contact/kiyaku/" onclick="window.open(this.href, 'mywindow6', 'width=800, height=600, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="textLink" style="color:#555555; font-size: 16px; padding: 10px;">個人情報の取扱いについての規約</a>を読み、内容に同意いただけない場合は「規約に同意する」の選択を解除してください。</p>
-<input name="kiyaku" type="checkbox" id="kiyaku" checked><label for="kiyaku">規約に同意する <span id="kiyaku-status">(同意済み)</span></label>
+<!-- WCAG 3.2.1: Checkbox does not trigger context changes on focus. Uses click/change events only. -->
+<input name="kiyaku" type="checkbox" id="kiyaku" checked aria-describedby="kiyaku-status">
+<label for="kiyaku">規約に同意する <span id="kiyaku-status" role="status" aria-live="polite">(同意済み)</span></label>
 </div>
 <!-- WCAG 3.2.1: Submit button does not trigger context changes on focus. Only triggers form submission on click/submit event. -->
 <button type="submit" id="submit-button" aria-label="お問い合わせを送信" style="background-color:#333333; color:#FFFFFF; min-width: 100px; min-height: 44px; padding: 8px 16px;">送信</button>
@@ -221,7 +223,8 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
   crossorigin="anonymous"></script>
   <script src="assets/js/function.js"></script>
   <script>
-    // WCAG 1.4.1
+    // WCAG 1.4.1: Non-sensory indication of checkbox state
+    // WCAG 3.2.1: Using 'change' event instead of 'focus' - no context change on focus
     const kiyakuCheckbox = document.getElementById('kiyaku');
     const kiyakuStatus = document.getElementById('kiyaku-status');
 

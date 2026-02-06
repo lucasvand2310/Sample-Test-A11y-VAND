@@ -55,6 +55,8 @@ $(document).on("mousedown touchstart", "#submit-button", function(e){
 	
 	function VA() {
 		
+		// WCAG 3.2.1: Using 'click' event instead of 'focus' to prevent context change on focus
+		// WCAG 1.4.1: Toggle 'require' class for form validation - does not affect checkbox state visually
 		$(document).on("click","#kiyaku", function(){
 	if($(this).is(":checked") ){
 $(this).removeClass("require");		
