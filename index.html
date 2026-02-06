@@ -188,11 +188,12 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
 <section id="contact" class="black">
 <h2>Contact us<span>お問い合わせ</span></h2>
 
+<!-- WCAG 3.2.1: No Change on Focus - All form fields have proper labels and do not trigger context changes on focus -->
 <form id="form">
-<p class="label"><label for="name">お名前</label><input name="name" type="text" class="require" id="name" autocomplete="name"></p>
-<p class="label"><label for="inc">会社名</label><input name="inc" type="text" id="inc"></p>
-<p class="label"><label for="mail">メールアドレス</label><input name="mail" type="email" class="require" id="mail" inputmode="email" autocomplete="email"></p>
-<p class="label"><label for="textarea">お問い合わせ内容</label><textarea name="textarea" maxlength="500" id="textarea"></textarea></p>
+<p class="label"><label for="name">お名前</label><input name="name" type="text" class="require" id="name" autocomplete="name" aria-label="お名前"></p>
+<p class="label"><label for="inc">会社名</label><input name="inc" type="text" id="inc" autocomplete="organization"></p>
+<p class="label"><label for="mail">メールアドレス</label><input name="mail" type="email" class="require" id="mail" inputmode="email" autocomplete="email" aria-label="メールアドレス"></p>
+<p class="label"><label for="textarea">お問い合わせ内容</label><textarea name="textarea" maxlength="500" id="textarea" aria-label="お問い合わせ内容"></textarea></p>
 
 
 <div class="label relative kiyaku">
