@@ -1,0 +1,164 @@
+@charset "utf-8";
+body {font-family:  "Yu Gothic","Hiragino Kaku Gothic Pro", YuGothic, Meiryo, Osaka, "MS PGothic", sans-serif; color:#666; line-height:2; }
+header { height:70vh; position:relative; overflow:hidden; }
+header:before { content:""; display:block; width:200%; height:150%; transform:rotate(-3deg) translateX(0%); position:absolute; bottom:0; left:0%; background-color:#444444; transform-origin:0% 100%; }
+header h1 { width:100%; height:100%; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background-image:url(../img/logo.svg); background-repeat:no-repeat; background-position:center; background-size:30% auto; text-indent:-9999px; }
+
+section { padding:120px 0px 0px 0px; text-align:center; }
+section.black {  padding-bottom:120px; position:relative; overflow:hidden;background-color:#444444; }
+section.black.skew { background-color:transparent; }
+section.black.skew:before { content:""; display:block; width:200%; height:150%; transform:rotate(-3deg) translateX(0%); position:absolute; bottom:0; left:0%; background-color:#444444; transform-origin:0% 100%; z-index:-1; }
+section.pd {padding-bottom:120px; }
+section h2 { font-size:300%; color:#444; font-family:'DM Sans',Arial, Helvetica, sans-serif; font-weight:normal; margin-bottom:1em; line-height:1.5; }
+section h2 span { font-size:11px; color:#999; display:block;font-family:  "Yu Gothic","Hiragino Kaku Gothic Pro", YuGothic, Meiryo, Osaka, "MS PGothic", sans-serif; }
+section h3 { font-size:120%; margin-bottom:1em; color:#444; }
+section.black h2 { color:#fff; }
+section.black h2 span { color:#ccc; }
+section.black h3 {  color:#fff; }
+
+#about ul { width:48em; margin:3em auto 0 auto; text-align:left; font-size:90%; }
+#about ul:before { content:""; display:block; width:2em; height:1px; background-color:#444; margin:0 auto 3em auto; }
+#about ul li:before { content:""; display:inline-block; width:1em; height:2px; background-color:#444; vertical-align:middle; margin-right:.5em; }
+#about ul li { margin-bottom:.5em; }
+
+#about figure { margin-top:6vw; }
+#about figure img { width:100%; height:auto; max-width:800px; }
+
+.section { width:100%; background-color:#f6f6f6; margin:2em auto 0 auto; padding:4em; box-sizing:border-box;  }
+.section p { font-size:90%; }
+
+#Servise ul { max-width:1000px; margin:0 auto; text-align:left;
+	display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  
+  -webkit-box-pack: justify;
+     -ms-flex-pack: justify;
+   justify-content: space-between;
+   
+   -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+#Servise ul li { padding:2.5vw; color:#ccc; box-sizing:border-box; 
+-ms-flex-preferred-size: 50%;
+               flex-basis: 50%;
+			   max-width:50%;
+			   }
+#Servise ul li p { font-size:90%; }
+
+dl { max-width:800px; margin:0 auto; text-align:left; padding:1em 0; border-bottom:1px solid #eee; 
+display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  
+  -webkit-box-pack: justify;
+     -ms-flex-pack: justify;
+   justify-content: space-between;
+   
+   -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+	  }
+dt { color:#444; font-weight:bold; 
+-ms-flex-preferred-size: 10em;
+               flex-basis: 10em;
+			   max-width:10em;}
+			   
+dd { -ms-flex-preferred-size: calc( 100% - 10em );
+               flex-basis: calc( 100% - 10em );
+			   max-width:calc( 100% - 10em );}
+			   
+dd a { color:#444; text-decoration:underline; }
+dd a:hover { text-decoration:none; }
+			   
+input[type=text],input[type=email],textarea { -webkit-appearance:none; appearance:none; border:none; background:none; border-radius:none; background-color:#777; padding:1em; border-radius:.2em; width:100%; font-size:100%; box-sizing:border-box; }
+textarea { font-size:16px; height:8em; resize:none; }
+.label { margin-bottom:1.5em; }
+form { max-width:600px; margin:0 auto; text-align:left; }	   
+form h4 { color:#FFF; }		
+.kiyaku { margin-top:3em; }	   
+.kiyaku h6 { color:#FFF; }			   
+.kiyaku p { color:#ccc; }
+.kiyaku p a { color:#FFF; }	
+.kiyaku p a:hover { text-decoration:none; }
+.kiyaku label { margin-top:2em; display:inline-block; color:#fff; }
+
+#send { -webkit-appearance:none; appearance:none; border:none; background:none; display:inline-block; height:44px; padding:0 2em; background-color:#FFF; line-height:44px; font-weight:bold; color:#444; border-radius:22px; cursor:pointer; margin:0 auto; }
+#send.disabled { opacity:.2; cursor:default; }	   
+/* CSS Document */
+
+.pc { display:inline; }
+.sp { display:none; }
+
+@media screen and (max-width: 800px) {
+	.pc { display:none; }
+.sp { display:inline; }
+	
+	 body { font-size:14px; }
+	header h1 {
+    background-size: 50% auto;
+}
+section {
+    padding: 60px 20px 0px 20px;
+}
+section h2 {
+    font-size: 200%;
+    
+}
+section h3 { text-align:left;
+    font-size: 110%;
+  
+}
+section p { text-align:left; }
+
+#about ul {
+    width: auto;
+    
+}
+#about ul li { text-indent:-1.5em; margin-left:1.5em; }
+.section { margin-bottom:60px;
+    
+    padding: 2em;
+
+}
+#Servise ul li { margin-bottom:3em;
+    padding: 0em;
+    
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+}
+section.black {
+    padding-bottom: 60px;
+}
+dt {
+
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+}
+dd {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+}
+section.pd {
+    padding-bottom: 60px;
+}
+#about figure img { width:80%; }
+section h3 br { display:none; }
+}
+
+.msg #overlay { width:100%; height:100%; position:fixed; top:0; left:0; background-color:rgba(0,0,0,.8); z-index:99; background-image:url(../img/Rolling-1s-200px.svg); background-repeat:no-repeat; background-position:center; background-size:40px; }
+
+#complete { width:100%; padding:20px; box-sizing:border-box; background-color:#FDBF08; position:fixed; bottom:0; left:0; transform:translateY(100%); opacity:0; text-align:center; color:#444; 
+-moz-transition: all 0.4s cubic-bezier(.07,.91,.14,.84) 0s;
+-webkit-transition: all 0.4s cubic-bezier(.07,.91,.14,.84) 0s;
+-o-transition: all 0.4s cubic-bezier(.07,.91,.14,.84) 0s;
+-ms-transition: all 0.4s cubic-bezier(.07,.91,.14,.84) 0s;
+transition: all 0.4s cubic-bezier(.07,.91,.14,.84) 0s;
+}
+.complete #complete {  transform:translateY(0%); opacity:1;}
+#complete:before { content:"送信が完了いたしました"; font-weight:bold; }
+
+.error { color:#E81B1F!important; display:block; }
+.kiyaku label.error { margin:0; display:block;  }
