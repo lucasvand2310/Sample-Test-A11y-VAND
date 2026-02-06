@@ -1,4 +1,6 @@
 // WCAG 2.5.1: Use form submit event instead of custom div click
+// WCAG 2.5.2: Submit event triggers on up-event (mouseup/click), not down-event (mousedown)
+//             This allows users to cancel by moving pointer away before releasing
 $(document).on("submit", "#form", function(e){ 
 	e.preventDefault(); // Prevent default form submission
 	
@@ -34,7 +36,15 @@ $(document).on("submit", "#form", function(e){
 	});
 
 	return false;
-});	
+});
+
+// WCAG 2.5.2: Explicitly prevent any mousedown/touchstart events on submit button
+// This ensures the function is never triggered on down-event
+$(document).on("mousedown touchstart", "#submit-button", function(e){
+	// Do nothing on down-event - only up-event (click/submit) should trigger submission
+	// This allows users to cancel by dragging pointer away before releasing
+});
+	
 	
 	function VA() {
 		
