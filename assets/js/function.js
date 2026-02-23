@@ -27,6 +27,10 @@ $(document).on("submit", "#form", function(e){
 		data: {company:company,name:name,mail:mail,message:message},
 		success: function(msg){
 			$("html").addClass("msg");
+			$("#form-status").text("Your message has been sent successfully!");
+		},
+		error: function(){
+			$("#form-status").text("There was an error submitting your form. Please try again.");
 		},
 		complete: function(){
 			setTimeout(function(){
