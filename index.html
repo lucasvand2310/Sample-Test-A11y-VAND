@@ -139,6 +139,42 @@ a:focus, input:focus, textarea:focus, button:focus {
     animation-duration: 0s !important;
     transition-duration: 0s !important;
   }
+
+  /* WCAG 3.1.3: Glossary Styling */
+  .glossary-term {
+    text-decoration: underline dotted;
+    cursor: help;
+    color: inherit;
+  }
+  #glossary {
+    text-align: left;
+    background: #444;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  #glossary h3 {
+    margin-top: 0;
+    font-size: 18px;
+    border-bottom: 1px solid #666;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+  #glossary dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 20px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  #glossary dt {
+    font-weight: bold;
+    color: #FDBF08;
+  }
+  #glossary dd {
+    margin: 0;
+    color: #ccc;
+  }
 </style>
 </head>
 
@@ -158,7 +194,7 @@ a:focus, input:focus, textarea:focus, button:focus {
 <ul style="margin-bottom:100px;">
 <li>お客様とのコミュニケーションを大事にします。ちょっとしつこいくらい質問するかもしれません。</li>
 <li>お客様のプロジェクトの最適解を、お客様と一緒に真剣に考えます。</li>
-<li>ヒアリングをもとに、UX/UI/システム仕様を専門スタッフがとことん考え最良な設計をいたします。</li>
+<li>ヒアリングをもとに、<a href="#def-uxui" class="glossary-term">UX/UI</a>/システム仕様を専門スタッフがとことん考え最良な設計をいたします。</li>
 <li>綿密に設計されたドキュメントをもとに、システム開発を行います。</li>
 <li>開発された成果物は、しっかりと品質管理を行い、責任を持ってお客様へ納品いたします。</li>
 </ul>
@@ -171,7 +207,7 @@ a:focus, input:focus, textarea:focus, button:focus {
 <h3>グミベトナムとは？</h3>
 <p>グミベトナム（gumi Vietnam Co., Ltd.）は、ベトナムのホーチミンに拠点を持つシステム会社です。<br>
 Webアプリケーションからスマートフォンアプリ、オープン系システムなど幅広い開発が可能です。<br>
-VR、AR、AIを用いたデジタルコンテンツ制作も得意としています。</p>
+VR、<a href="#def-ar" class="glossary-term">AR</a>、AIを用いたデジタルコンテンツ制作も得意としています。</p>
 </div>
 -->
 </section>
@@ -183,20 +219,20 @@ VR、AR、AIを用いたデジタルコンテンツ制作も得意としてい�
 
 <ul>
 <li>
-<h3>UX/UI</h3>
+<h3><a href="#def-uxui" class="glossary-term">UX/UI</a></h3>
 <p>Webサイトからスマートフォンアプリ、デジタルサイネージ、業務システムまで様々なUX/UIを提供いたします。<br>
 お客様との綿密なコミュニケーションのもとに、ビジネス上の課題を解決する最適な手段を導き出し、ご要望に最も適したご提案をさせていただきます。</p>
 </li>
 <li>
 <h3>Webアプリケーション開発</h3>
 <p>Webサイトやアプリのバックエンドシステム構築から大規模な業務系システムまで、様々なプロジェクトに対応可能です。<br>
-新規での開発はもちろん、APIや既存システムとの連携なども対応いたします。</p>
+新規での開発はもちろん、<a href="#def-api" class="glossary-term">API</a>や既存システムとの連携なども対応いたします。</p>
 </li>
 <li>
 <h3>スマートフォンアプリ開発</h3>
 <p>洗練されたUXを実現するiPhone・Androidアプリを開発しお客様のビジネスモデルを最大限サポートします。<br>
 iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javascriptでのハイブリッドアプリの制作、広告モデル型アプリなど広範囲のアプリの制作が可能です。<br>
-また、MR2GO対応アプリ開発、AR系プロモーションアプリ開発では国内有数の開発実績がございます。</p>
+また、<a href="#def-mr2go" class="glossary-term">MR2GO</a>対応アプリ開発、AR系プロモーションアプリ開発では国内有数の開発実績がございます。</p>
 </li>
 <li>
 <h3>ラボ型オフショア開発支援</h3>
@@ -344,6 +380,24 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
     <!-- WCAG 2.3.3: Motion animation toggle -->
     <button id="toggle-animations" style="background-color: transparent; color: #fff; border: 1px solid #fff; padding: 5px 10px; cursor: pointer; border-radius: 4px; font-size: 14px; margin-top: 10px;">Disable Animations</button>
   </section>
+
+  <section id="glossary" aria-labelledby="glossary-title">
+    <h3 id="glossary-title">Technical Terms Glossary (用語集)</h3>
+    <dl>
+      <dt id="def-uxui">UX/UI</dt>
+      <dd>User Experience (ユーザー体験) / User Interface (ユーザーインターフェース). 設計から見た目まで、ユーザーが使いやすく心地よいサービスを作るための設計手法です。</dd>
+      
+      <dt id="def-api">API</dt>
+      <dd>Application Programming Interface. 異なるソフトウェアやプログラム同士が情報をやり取りするための窓口となる仕組みです。</dd>
+      
+      <dt id="def-ar">AR</dt>
+      <dd>Augmented Reality (拡張現実). 現実の風景にデジタル情報を重ねて表示する技術です。</dd>
+      
+      <dt id="def-mr2go">MR2GO</dt>
+      <dd>VAND社が提供する、手軽に複合現実（Mixed Reality）体験を導入できるソリューションの名称です。</dd>
+    </dl>
+  </section>
+
   <p style="margin-top: 20px; font-size: 14px; color: #ccc;">&copy; 2025 VAND Inc. All rights reserved.</p>
 </footer>
 
