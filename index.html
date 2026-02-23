@@ -51,9 +51,76 @@ a:focus, input:focus, textarea:focus, button:focus {
   text-decoration: none;
 }
 
-.skip-link:focus {
-  top: 0;
-}
+  .skip-link:focus {
+    top: 0;
+  }
+
+  /* Session Timeout Warning Modal */
+  #timeout-warning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(4px);
+  }
+  .timeout-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 440px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    color: #333;
+  }
+  .timeout-content h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #000;
+    font-size: 24px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .timeout-content p {
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+  }
+  .timeout-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+  .timeout-buttons button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.2s ease;
+  }
+  #continue-session {
+    background-color: #000;
+    color: #fff;
+  }
+  #log-out {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  .timeout-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .timeout-buttons button:active {
+    transform: translateY(0);
+  }
 </style>
 </head>
 
@@ -305,6 +372,115 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
       }
     });
   </script>
+
+  <script>
+    // WCAG 2.2.6: Session Timeout Warning Implementation
+    (function() {
+      const timeoutWarning = document.getElementById('timeout-warning');
+      const continueSessionButton = document.getElementById('continue-session');
+      const logOutButton = document.getElementById('log-out');
+      
+      let warningTimeout;
+      let logoutTimeout;
+      
+      // Default timers: 25 minutes for warning, 30 minutes for logout
+      // For testing purposes, these can be shortened.
+      const WARNING_DELAY = 25 * 60 * 1000; 
+      const LOGOUT_DELAY = 30 * 60 * 1000; 
+      
+      let lastFocusedElement;
+
+      function showTimeoutWarning() {
+        lastFocusedElement = document.activeElement;
+        timeoutWarning.style.display = 'flex';
+        continueSessionButton.focus();
+        
+        // Trap focus inside modal
+        document.addEventListener('keydown', trapFocus);
+      }
+
+      function hideTimeoutWarning() {
+        timeoutWarning.style.display = 'none';
+        document.removeEventListener('keydown', trapFocus);
+        if (lastFocusedElement) lastFocusedElement.focus();
+      }
+
+      function trapFocus(e) {
+        if (e.key === 'Tab') {
+          const focusableElements = timeoutWarning.querySelectorAll('button');
+          const firstElement = focusableElements[0];
+          const lastElement = focusableElements[focusableElements.length - 1];
+
+          if (e.shiftKey) {
+            if (document.activeElement === firstElement) {
+              lastElement.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastElement) {
+              firstElement.focus();
+              e.preventDefault();
+            }
+          }
+        }
+      }
+
+      function doLogout() {
+        // In a real application, you would perform a redirect to logout or clear session
+        alert('Your session has expired due to inactivity. You have been logged out.');
+        window.location.href = '#logout';
+        location.reload();
+      }
+
+      function resetTimers() {
+        if (timeoutWarning.style.display !== 'flex') {
+          clearTimeout(warningTimeout);
+          clearTimeout(logoutTimeout);
+          warningTimeout = setTimeout(showTimeoutWarning, WARNING_DELAY);
+          logoutTimeout = setTimeout(doLogout, LOGOUT_DELAY);
+        }
+      }
+
+      continueSessionButton.addEventListener('click', function() {
+        hideTimeoutWarning();
+        resetTimers();
+      });
+
+      logOutButton.addEventListener('click', function() {
+        doLogout();
+      });
+
+      // Track user activity to reset the timeout
+      const activities = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'];
+      activities.forEach(name => {
+        window.addEventListener(name, resetTimers, { passive: true });
+      });
+
+      // Initial start
+      resetTimers();
+      
+      // Exposition for manual testing:
+      // To test immediately, run in console: 
+      // window.testTimeout(10000); // 10 seconds
+      window.testTimeout = function(ms) {
+        clearTimeout(warningTimeout);
+        clearTimeout(logoutTimeout);
+        warningTimeout = setTimeout(showTimeoutWarning, ms);
+        logoutTimeout = setTimeout(doLogout, ms + 5000);
+      };
+    })();
+  </script>
+
+  <div id="timeout-warning" style="display:none;" role="alertdialog" aria-modal="true" aria-labelledby="timeout-title" aria-describedby="timeout-desc">
+    <div class="timeout-content">
+      <h2 id="timeout-title">Your session is about to expire</h2>
+      <p id="timeout-desc">For your security, we will log you out soon due to inactivity. Would you like to stay signed in?</p>
+      <div class="timeout-buttons">
+        <button id="continue-session">Continue Session</button>
+        <button id="log-out">Log Out</button>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
