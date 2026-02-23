@@ -10,10 +10,20 @@
 $(document).on("submit", "#form", function(e){
 	e.preventDefault(); // Prevent default form submission
 	
-	// Check if form is valid (no required fields)
-	var requiredLength = $(".require").length;
-	if (requiredLength > 0) {
-		return false; // Don't submit if there are required fields
+	// Trigger validation for all required fields to show hidden errors
+	$("#name, #mail, #textarea").trigger("change");
+
+	// Check if terms are agreed to
+	if (!$("#kiyaku").is(":checked")) {
+		$("#form-status").text("規約に同意してください。 (Please agree to the terms.)").css("color", "#ffcccc");
+		return false;
+	}
+
+	// Check if form is valid (no .require class on inputs)
+	var requiredFields = $("input.require, textarea.require").length;
+	if (requiredFields > 0) {
+		$("#form-status").text("入力エラーがあります。内容を確認してください。 (There are input errors. Please check the content.)").css("color", "#ffcccc");
+		return false;
 	}
 
 	var company = $("#inc").val();
@@ -27,21 +37,22 @@ $(document).on("submit", "#form", function(e){
 		data: {company:company,name:name,mail:mail,message:message},
 		success: function(msg){
 			$("html").addClass("msg");
-			$("#form-status").text("Your message has been sent successfully!");
+			$("#form-status").text("お問い合わせありがとうございます。追ってご連絡させていただきます。 (Thank you for your inquiry! We will contact you shortly.)").css("color", "#FFFFFF");
 		},
 		error: function(){
-			$("#form-status").text("There was an error submitting your form. Please try again.");
+			$("#form-status").text("送信中にエラーが発生しました。もう一度お試しください。 (There was an error submitting your form. Please try again.)").css("color", "#ffcccc");
 		},
 		complete: function(){
 			setTimeout(function(){
 				$("html").removeClass("msg");
 				$("body,html").stop().animate({scrollTop:0},300);
 				$("html").addClass("complete");
-			},2000);
+			},3000);
 			
 			setTimeout(function(){
 				$("html").removeClass("complete");
-			},8000);
+				$("#form-status").text(""); // Clear status for next use
+			},10000);
 		}
 	});
 
@@ -163,18 +174,8 @@ $(this).removeClass("require");
  
  
  
- // WCAG 3.2.1: Form validation uses 'change' event, not 'focus' - prevents context change on focus
- // Enable/disable submit button based on form validity
- $("body").on("change", "form input,form textarea", function(){
-		
-	var length = $(".require").length;
-	if( length == 0 ){
-		$("#submit-button").prop("disabled", false).css("opacity", "1");
-	}else {
-		$("#submit-button").prop("disabled", true).css("opacity", "0.5");
-	}
-	
-	
- });
+ // WCAG 3.3.1: Form validation triggers on submit.
+ // Removing automatic button disabling to ensure users can trigger and hear validation errors.
+
 	}
 VA();
