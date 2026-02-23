@@ -227,7 +227,7 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
 <p class="label"><label for="name">お名前<span class="required-mark" aria-label="必須">*</span></label><input name="name" type="text" class="require" id="name" autocomplete="name" aria-label="お名前" aria-required="true" aria-describedby="name-error"><span id="name-error" class="error-message" role="alert" aria-live="polite"></span></p>
 <p class="label"><label for="inc">会社名</label><input name="inc" type="text" id="inc" autocomplete="organization" aria-label="会社名"></p>
 <!-- WCAG 3.2.1: Email input does not trigger context changes on focus. Uses change event for validation only. -->
-<p class="label"><label for="mail">メールアドレス<span class="required-mark" aria-label="必須">*</span></label><input name="mail" type="email" class="require" id="mail" inputmode="email" autocomplete="email" aria-label="メールアドレス" aria-required="true" aria-describedby="mail-error"><span id="mail-error" class="error-message" role="alert" aria-live="polite"></span></p>
+<p class="label"><label for="mail">メールアドレス<span class="required-mark" aria-label="必須">*</span></label><input name="mail" type="email" class="require" id="mail" inputmode="email" autocomplete="email" aria-label="メールアドレス" aria-required="true" aria-describedby="mail-error" required pattern=".+@.+\..+" title="Please enter a valid email address."><span id="mail-error" class="error-message" role="alert" aria-live="polite"></span></p>
 <!-- WCAG 3.2.1: Textarea does not trigger context changes on focus. Uses change/keyup events for validation only. -->
 <p class="label"><label for="textarea">お問い合わせ内容</label><textarea name="message" maxlength="500" id="textarea" aria-label="お問い合わせ内容" aria-describedby="textarea-error" autocomplete="on"></textarea><span id="textarea-error" class="error-message" role="alert" aria-live="polite"></span></p>
 
@@ -275,6 +275,29 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
         kiyakuStatus.textContent = '(同意済み)';
       } else {
         kiyakuStatus.textContent = '';
+      }
+    });
+
+    // SC 3.3.3: Input Validation Suggestions for email field
+    const emailInput = document.getElementById('mail');
+    const emailError = document.getElementById('mail-error');
+
+    emailInput.addEventListener('invalid', function(event) {
+      if (emailInput.validity.valueMissing) {
+        emailError.textContent = 'Please enter your email address.';
+      } else if (emailInput.validity.typeMismatch || emailInput.validity.patternMismatch) {
+        emailError.textContent = 'Please enter a valid email address.';
+      } else {
+        emailError.textContent = '';
+      }
+      emailError.style.display = 'block';
+    });
+
+    // Clear error message when user starts typing and input becomes valid
+    emailInput.addEventListener('input', function() {
+      if (emailInput.validity.valid) {
+        emailError.textContent = '';
+        emailError.style.display = 'none';
       }
     });
   </script>
