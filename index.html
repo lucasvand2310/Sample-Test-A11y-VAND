@@ -158,6 +158,8 @@ a:focus, input:focus, textarea:focus, button:focus {
     text-decoration: underline dotted;
     cursor: help;
     color: inherit;
+    padding: 15px;
+    display: inline-block;
   }
   #glossary {
     text-align: left;
@@ -192,7 +194,7 @@ a:focus, input:focus, textarea:focus, button:focus {
 </head>
 
 <body>
-<a href="#about" class="skip-link">Skip to main content</a>
+<a href="#about" class="skip-link" style="padding: 10px; display: inline-block;">Skip to main content</a>
 <header><h1 lang="en">VAND</h1></header>
 
 <main>
@@ -232,7 +234,7 @@ VR、<a href="#def-ar" class="glossary-term"><abbr title="Augmented Reality">AR<
 
 <ul>
 <li>
-<h3><a href="#def-uxui" class="glossary-term"><abbr title="User Experience / User Interface">UX/UI</abbr></a></h3>
+<h3><a href="#def-uxui" class="glossary-term" style="padding: 13px; display: inline-block;"><abbr title="User Experience / User Interface">UX/UI</abbr></a></h3>
 <p>Webサイトからスマートフォンアプリ、デジタルサイネージ、業務システムまで様々な<a href="#def-uxui" class="glossary-term"><abbr title="User Experience / User Interface">UX/UI</abbr></a>を提供いたします。<br>
 お客様との綿密なコミュニケーションのもとに、ビジネス上の課題を解決する最適な手段を導き出し、ご要望に最も適したご提案をさせていただきます。</p>
 </li>
@@ -383,7 +385,7 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
 
 <div class="label relative kiyaku">
 <h3 class="kiyaku">個人情報の取扱いについて</h3>
-<p><a href="/contact/kiyaku/" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'mywindow6', 'width=800, height=600, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="textLink" style="color:#555555; font-size: 16px; padding: 10px;">個人情報保護方針全文 (新規タブで開きます)</a>を読み、内容に同意いただけない場合は「規約に同意する」の選択を解除してください。</p>
+<p><a href="/contact/kiyaku/" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'mywindow6', 'width=800, height=600, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="textLink" style="color:#555555; font-size: 16px; padding: 15px;">個人情報保護方針全文 (新規タブで開きます)</a>を読み、内容に同意いただけない場合は「規約に同意する」の選択を解除してください。</p>
 <!-- WCAG 3.2.1: Checkbox does not trigger context changes on focus. Uses click/change events only. -->
 <input name="kiyaku" type="checkbox" id="kiyaku" checked aria-describedby="kiyaku-status">
 <label for="kiyaku">規約に同意する <span id="kiyaku-status" role="status" aria-live="polite">(同意済み)</span></label>
@@ -396,17 +398,17 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
 </section>
   <nav aria-label="Footer Navigation">
     <ul style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-      <li><a href="#about" lang="en" style="color: #fff; text-decoration: none;">About VAND Inc.</a></li>
-      <li><a href="#Servise" lang="en" style="color: #fff; text-decoration: none;">Our Services</a></li>
-      <li><a href="#Profile" lang="en" style="color: #fff; text-decoration: none;">Company Profile</a></li>
-      <li><a href="#contact" lang="en" style="color: #fff; text-decoration: none;">Contact Us</a></li>
-      <li><a href="#accessibility" lang="en" style="color: #fff; text-decoration: none;">Help</a></li>
+      <li><a href="#about" lang="en" style="color: #fff; text-decoration: none; padding: 13px; display: inline-block;">About VAND Inc.</a></li>
+      <li><a href="#Servise" lang="en" style="color: #fff; text-decoration: none; padding: 13px; display: inline-block;">Our Services</a></li>
+      <li><a href="#Profile" lang="en" style="color: #fff; text-decoration: none; padding: 13px; display: inline-block;">Company Profile</a></li>
+      <li><a href="#contact" lang="en" style="color: #fff; text-decoration: none; padding: 13px; display: inline-block;">Contact Us</a></li>
+      <li><a href="#accessibility" lang="en" style="color: #fff; text-decoration: none; padding: 13px; display: inline-block;">Help</a></li>
     </ul>
   </nav>
     <section id="accessibility" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #555;">
-    <p>For optimal viewing, you can customize text and background colors in your browser settings. <a href='https://support.google.com/chrome/answer/7349088?hl=en' style="color: #fff;">Learn more about customizing Chrome's accessibility settings</a>.</p>
+    <p>For optimal viewing, you can customize text and background colors in your browser settings. <a href='https://support.google.com/chrome/answer/7349088?hl=en' style="color: #fff; padding: 15px; display: inline-block;">Learn more about customizing Chrome's accessibility settings</a>.</p>
     <!-- WCAG 2.3.3: Motion animation toggle -->
-    <button id="toggle-animations" style="background-color: transparent; color: #fff; border: 1px solid #fff; padding: 5px 10px; cursor: pointer; border-radius: 4px; font-size: 14px; margin-top: 10px;">Disable Animations</button>
+    <button id="toggle-animations" style="background-color: transparent; color: #fff; border: 1px solid #fff; padding: 10px; cursor: pointer; border-radius: 4px; font-size: 16px; margin-top: 10px; min-width: 44px; min-height: 44px;">Disable Animations</button>
   </section>
 
   <section id="glossary" aria-labelledby="glossary-title">
@@ -574,7 +576,7 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
   </script>
 
   <div id="timeout-warning" style="display:none;" role="alertdialog" aria-modal="true" aria-labelledby="timeout-title" aria-describedby="timeout-desc">
-    <div class="timeout-content">
+    <div class="timeout-content" style="position: absolute; max-height: 80vh; overflow-y: auto;">
       <h2 id="timeout-title">Your session is about to expire</h2>
       <p id="timeout-desc">For your security, we will log you out soon due to inactivity. Would you like to stay signed in?</p>
       <div class="timeout-buttons">
