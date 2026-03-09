@@ -43,17 +43,23 @@ a:focus, input:focus, textarea:focus, button:focus {
 
 .skip-link {
   position: absolute;
-  top: -40px;
-  left: 0;
-  background-color: #000;
-  color: #fff;
-  padding: 8px;
-  z-index: 100;
-  text-decoration: none;
+  top: auto;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 999;
 }
 
   .skip-link:focus {
-    top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  background-color: white; /* Adjust colors as needed */
+  border: 1px solid black;
+  padding: 0.5em;
+  text-decoration: none;
+  color: black;
   }
 
   /* Session Timeout Warning Modal */
@@ -195,10 +201,10 @@ a:focus, input:focus, textarea:focus, button:focus {
 </head>
 
 <body>
-<a href="#about" class="skip-link" style="padding: 10px; display: inline-block;">Skip to main content</a>
+<a href="#main" class="skip-link">Skip to main content</a>
 <header><h1 lang="en">VAND</h1></header>
 
-<main>
+<main id="main">
 <section id="about">
 <h2 lang="en">About VAND<span lang="ja">VANDについて</span></h2>
 <h3>わたしたちは、ただの制作会社ではありません。<br>
