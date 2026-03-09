@@ -369,7 +369,7 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
 <!-- WCAG 3.3.1: Error Identification - Error messages are provided for all required fields -->
 <p class="label">
   <label for="name">お名前<span class="required-mark" aria-label="必須">*</span></label>
-  <input name="name" type="text" class="require" id="name" autocomplete="name" aria-label="お名前" aria-required="true" aria-describedby="name-error name-desc">
+  <input name="name" type="text" class="require" id="name" autocomplete="name" aria-label="お名前" aria-required="true" aria-describedby="name-error name-desc" style="filter: blur(6px);" tabindex="5">
   <span id="name-error" class="error-message" role="alert" aria-live="polite"></span>
   <span id="name-desc" class="visually-hidden">Please enter your full name.</span>
 </p><p class="label">
