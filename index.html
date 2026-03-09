@@ -376,7 +376,7 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
 <!-- WCAG 3.3.1: Error Identification - Error messages are provided for all required fields -->
 <p class="label">
   <label for="name">お名前<span class="required-mark" aria-label="必須">*</span></label>
-  <input name="name" type="text" class="require" id="name" autocomplete="name" aria-label="お名前" aria-required="true" aria-describedby="name-error name-desc" style="filter: blur(6px);">
+  <input name="name" type="text" class="require" id="name" autocomplete="name" aria-label="お名前" aria-required="true" aria-describedby="name-error name-desc">
   <span id="name-error" class="error-message" role="alert" aria-live="polite"></span>
   <span id="name-desc" class="visually-hidden">Please enter your full name.</span>
 </p><p class="label">
@@ -450,6 +450,30 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
   crossorigin="anonymous"></script>
   <script src="assets/js/function.js"></script>
   <script>
+    // SC 3.3.1: Error Identification for name field
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('form');
+      const nameInput = document.getElementById('name');
+      const nameError = document.getElementById('name-error');
+
+      if (form && nameInput && nameError) {
+        form.addEventListener('submit', function(event) {
+          if (nameInput.value.trim() === '') {
+            event.preventDefault();
+            nameError.textContent = 'Please enter your name';
+            nameError.style.display = 'block';
+          }
+        });
+
+        nameInput.addEventListener('input', function() {
+          if (nameInput.value.trim() !== '') {
+            nameError.textContent = '';
+            nameError.style.display = 'none';
+          }
+        });
+      }
+    });
+
     // WCAG 1.4.1: Non-sensory indication of checkbox state
     // WCAG 3.2.1: Using 'change' event instead of 'focus' - no context change on focus
     const kiyakuCheckbox = document.getElementById('kiyaku');
