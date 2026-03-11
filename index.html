@@ -197,6 +197,11 @@ a:focus, input:focus, textarea:focus, button:focus {
     margin: 0;
     color: #ccc;
   }
+  #name-desc {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+  }
 </style>
 </head>
 
@@ -378,7 +383,7 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
   <label for="name">お名前<span class="required-mark" aria-label="必須">*</span></label>
   <input name="name" type="text" class="require" id="name" autocomplete="name" aria-label="お名前" aria-required="true" aria-describedby="name-error name-desc">
   <span id="name-error" class="error-message" role="alert" aria-live="polite"></span>
-  <span id="name-desc" class="visually-hidden">Please enter your full name.</span>
+  <div id="name-desc">Please enter your full name.</div>
 </p><p class="label">
   <label for="inc">会社名</label>
   <input name="inc" type="text" id="inc" autocomplete="organization" aria-label="会社名" aria-describedby="inc-desc">
