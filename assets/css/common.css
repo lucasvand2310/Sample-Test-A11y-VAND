@@ -148,6 +148,38 @@ section.pd {
 section h3 br { display:none; }
 }
 
+#submit-button {
+	background-color: #333333;
+	color: #FFFFFF;
+	min-width: 100px;
+	min-height: 44px;
+	padding: 8px 16px;
+	border: 1px solid #777;
+	cursor: pointer;
+}
+
+#form-status {
+	margin-top: 20px;
+	font-weight: bold;
+	color: #000000;
+	background-color: #FAFAFA;
+	padding: 10px;
+	border-radius: 4px;
+}
+
+#toggle-animations {
+	background-color: #333333;
+	color: #ffffff;
+	border: 1px solid #ffffff;
+	padding: 10px;
+	border-radius: 4px;
+	font-size: 16px;
+	margin-top: 10px;
+	min-width: 44px;
+	min-height: 44px;
+	cursor: pointer;
+}
+
 .msg #overlay { width:100%; height:100%; position:fixed; top:0; left:0; background-color:rgba(0,0,0,.8); z-index:99; background-image:url(../img/Rolling-1s-200px.svg); background-repeat:no-repeat; background-position:center; background-size:40px; }
 
 #complete { width:100%; padding:20px; box-sizing:border-box; background-color:#FDBF08; position:fixed; bottom:0; left:0; transform:translateY(100%); opacity:0; text-align:center; color:#444; 

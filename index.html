@@ -176,8 +176,9 @@ a:focus, input:focus, textarea:focus, button:focus {
     padding: 20px;
     border-radius: 8px;
     margin-top: 20px;
+    max-width: 600px;
   }
-  #glossary h3 {
+  #glossary h2 {
     margin-top: 0;
     font-size: 18px;
     border-bottom: 1px solid #666;
@@ -198,11 +199,17 @@ a:focus, input:focus, textarea:focus, button:focus {
   #glossary dd {
     margin: 0;
     color: #ccc;
+    max-width: 80ch;
   }
-  #name-desc {
+#name-desc {
     width: 100%;
     height: auto;
     overflow: auto;
+  }
+  .lead-text {
+    font-size: 120%;
+    margin-bottom: 1em;
+    color: #444;
   }
 </style>
 </head>
@@ -214,8 +221,8 @@ a:focus, input:focus, textarea:focus, button:focus {
 <main id="main">
 <section id="about">
 <h2 lang="en">About VAND<span lang="ja">VANDについて</span></h2>
-<h3>わたしたちは、ただの制作会社ではありません。<br>
-お客様のプロジェクトを成功へと導く、ディレクション集団です。</h3>
+<p class="lead-text">わたしたちは、ただの制作会社ではありません。<br>
+お客様のプロジェクトを成功へと導く、ディレクション集団です。</p>
 <p>わたしたちの仕事は、顧客理解からはじまります。<br>
 わたしたちは、プロジェクトを成功に導く上で重要なことは、<br>
 お客様、そしてそのまた先にいるお客様を理解することからはじまると考えています。</p>
@@ -372,7 +379,7 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
   <section id="accessibility" style="margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #555;">
     <p>For optimal viewing, you can customize text and background colors in your browser settings. <a href='https://support.google.com/chrome/answer/7349088?hl=en' style="color: #fff; padding: 15px; display: inline-block;">Learn more about customizing Chrome's accessibility settings</a>.</p>
     <!-- WCAG 2.3.3: Motion animation toggle -->
-    <button id="toggle-animations" style="background-color: #333333; color: #ffffff; border: 1px solid #ffffff; padding: 10px; cursor: pointer; border-radius: 4px; font-size: 16px; margin-top: 10px; min-width: 44px; min-height: 44px;" aria-pressed="false">Disable Animations</button>
+    <button id="toggle-animations" aria-pressed="false" style="border: 2px solid #777;">Disable Animations</button>
   </section>
 
 <section id="contact" class="black">
@@ -406,15 +413,15 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
 
 <div class="label relative kiyaku">
 <h3 class="kiyaku">個人情報の取扱いについて</h3>
-<p><a href="/contact/kiyaku/" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'mywindow6', 'width=800, height=600, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="textLink" style="font-size: 16px; padding: 15px; color: #ADD8E6;">個人情報保護方針全文 (新規タブで開きます)</a>を読み、内容に同意いただけない場合は「規約に同意する」の選択を解除してください。</p>
+<p><a href="/contact/kiyaku/" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'mywindow6', 'width=800, height=600, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="textLink" style="font-size: 16px; padding: 15px; color: #FFFFFF; background-color: #000000;">個人情報保護方針全文 (新規タブで開きます)</a>を読み、内容に同意いただけない場合は「規約に同意する」の選択を解除してください。</p>
 <!-- WCAG 3.2.1: Checkbox does not trigger context changes on focus. Uses click/change events only. -->
 <input name="kiyaku" type="checkbox" id="kiyaku" checked aria-describedby="kiyaku-status">
 <label for="kiyaku">規約に同意する <span id="kiyaku-status" role="status" aria-live="polite">(同意済み)</span></label>
 </div>
 <!-- WCAG 3.2.1: Submit button does not trigger context changes on focus. Only triggers form submission on click/submit event. -->
-<button type="submit" id="submit-button" aria-label="送信 (お問い合わせを送信)" style="background-color:#333333; color:#FFFFFF; min-width: 100px; min-height: 44px; padding: 8px 16px; border: 1px solid #777;">送信</button>
+<button type="submit" id="submit-button" aria-label="送信 (お問い合わせを送信)" style="border: 1px solid #777; min-width: 44px; min-height: 44px;">Submit</button>
 </form>
-<div aria-live="polite" id="form-status" style="margin-top: 20px; font-weight: bold; color: #000000; background-color: #FAFAFA; padding: 10px; border-radius: 4px;"></div>
+<div aria-live="polite" id="form-status"></div>
 
 </section>
   <nav aria-label="Footer Navigation">
@@ -429,19 +436,19 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
 
 
   <section id="glossary" aria-labelledby="glossary-title">
-    <h3 id="glossary-title">Technical Terms Glossary (用語集)</h3>
+    <h2 id="glossary-title">Technical Terms Glossary (用語集)</h2>
     <dl>
-      <dt id="def-uxui">UX/UI</dt>
-      <dd>User Experience (ユーザー体験) / User Interface (ユーザーインターフェース). 設計から見た目まで、ユーザーが使いやすく心地よいサービスを作るための設計手法です。<br>(How users feel when using a website or app, and how the interface looks and works)</dd>
+      <dt id="def-uxui" style="background-color:#383838;">UX/UI</dt>
+      <dd style="color:#ffffff; background-color:#3a3a3a;">User Experience (ユーザー体験) / User Interface (ユーザーインターフェース). 設計から見た目まで、ユーザーが使いやすく心地よいサービスを作るための設計手法です。<br>(How users feel when using a website or app, and how the interface looks and works)</dd>
       
-      <dt id="def-api">API</dt>
-      <dd>Application Programming Interface. 異なるソフトウェアやプログラム同士が情報をやり取りするための窓口となる仕組みです。<br>(A way for different computer systems to talk to each other)</dd>
+      <dt id="def-api" style="background-color:#383838;">API</dt>
+      <dd style="color:#ffffff; background-color:#3a3a3a;">Application Programming Interface. 異なるソフトウェアやプログラム同士が情報をやり取りするための窓口となる仕組みです。<br>(A way for different computer systems to talk to each other)</dd>
       
-      <dt id="def-ar">AR</dt>
-      <dd>Augmented Reality (拡張現実). 現実の風景にデジタル情報を重ねて表示する技術です。<br>(Technology that puts digital images on top of the real world)</dd>
+      <dt id="def-ar" style="background-color:#383838;">AR</dt>
+      <dd style="color:#ffffff; background-color:#3a3a3a;">Augmented Reality (拡張現実). 現実の風景にデジタル情報を重ねて表示する技術です。<br>(Technology that puts digital images on top of the real world)</dd>
       
-      <dt id="def-mr2go">MR2GO</dt>
-      <dd>VAND社が提供する、手軽に複合現実（Mixed Reality）体験を導入できるソリューションの名称です。<br>(A simple way to use Mixed Reality technology to combine digital images with the real world)</dd>
+      <dt id="def-mr2go" style="background-color:#383838;">MR2GO</dt>
+      <dd style="color:#ffffff; background-color:#3a3a3a;">VAND社が提供する、手軽に複合現実（Mixed Reality）体験を導入できるソリューションの名称です。<br>(A simple way to use Mixed Reality technology to combine digital images with the real world)</dd>
     </dl>
   </section>
 
@@ -616,8 +623,8 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
     })();
   </script>
 
-  <div id="timeout-warning" style="display:none;" role="alertdialog" aria-modal="true" aria-labelledby="timeout-title" aria-describedby="timeout-desc">
-    <div class="timeout-content" style="position: absolute; max-height: 80vh; overflow-y: auto;">
+  <div id="timeout-warning" style="display:none; position:static;" role="alertdialog" aria-modal="true" aria-labelledby="timeout-title" aria-describedby="timeout-desc">
+    <div class="timeout-content" style="max-height: 80vh; overflow-y: auto;">
       <h2 id="timeout-title">Your session is about to expire</h2>
       <p id="timeout-desc">For your security, we will log you out soon due to inactivity. Would you like to stay signed in?</p>
       <div class="timeout-buttons">
