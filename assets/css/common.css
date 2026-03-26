@@ -77,7 +77,8 @@ form { max-width:600px; margin:0 auto; text-align:left; }
 form h4, form label { color:#FFF; }
 		
 .kiyaku { margin-top:3em; }	   
-.kiyaku h6 { color:#FFF; }			   
+.kiyaku h5 { color:#FFF; }
+			   
 .kiyaku p { color:#ccc; }
 .kiyaku p a { color:#FFF; }	
 .kiyaku p a:hover { text-decoration:none; }
