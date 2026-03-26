@@ -74,7 +74,7 @@ input[type=text],input[type=email],textarea { -webkit-appearance:none; appearanc
 textarea { font-size:16px; height:8em; resize:none; }
 .label { margin-bottom:1.5em; }
 form { max-width:600px; margin:0 auto; text-align:left; }	   
-form h4, form label { color:#FFF; }
+form h4, form label, form h3 { color:#FFF; }
 		
 .kiyaku { margin-top:3em; }	   
 .kiyaku h5 { color:#FFF; }
