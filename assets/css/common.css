@@ -84,8 +84,8 @@ form h4, form label, form h3 { color:#FFF; }
 .kiyaku p a:hover { text-decoration:none; }
 .kiyaku label { margin-top:2em; display:inline-block; color:#fff; }
 
-#send { -webkit-appearance:none; appearance:none; border:none; background:none; display:inline-block; height:44px; padding:0 2em; background-color:#FFF; line-height:44px; font-weight:bold; color:#444; border-radius:22px; cursor:pointer; margin:0 auto; }
-#send.disabled { opacity:.2; cursor:default; }	   
+#submit-button { -webkit-appearance:none; appearance:none; border:none; background:none; display:block; height:44px; padding:0 2em; background-color:#FFF; line-height:44px; font-weight:bold; color:#444; border-radius:22px; cursor:pointer; margin:3em auto 0; }
+#submit-button.disabled { opacity:.2; cursor:default; }
 /* CSS Document */
 
 .pc { display:inline; }

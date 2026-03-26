@@ -1,4 +1,4 @@
-$(document).on("click","#send:not(#send.disabled)", function(){ 
+$(document).on("click","#submit-button:not(#submit-button.disabled)", function(){ 
 
 		var company = $("#inc").val();
 		var name = $("#name").val();
@@ -148,9 +148,9 @@ $(this).removeClass("require");
 		
 	var length = $(".require").length;
 	if( length == 0 ){
-		$("#send").removeClass("disabled");
+		$("#submit-button").removeClass("disabled");
 	}else {
-		$("#send").addClass("disabled");
+		$("#submit-button").addClass("disabled");
 	}
 	
 	
