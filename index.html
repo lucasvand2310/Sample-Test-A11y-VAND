@@ -415,7 +415,7 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
 <h3 class="kiyaku">個人情報の取扱いについて</h3>
 <p><a href="/contact/kiyaku/" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'mywindow6', 'width=800, height=600, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="textLink" style="font-size: 16px; padding: 15px; color: #FFFFFF; background-color: #000000;">個人情報保護方針全文 (新規タブで開きます)</a>を読み、内容に同意いただけない場合は「規約に同意する」の選択を解除してください。</p>
 <!-- WCAG 3.2.1: Checkbox does not trigger context changes on focus. Uses click/change events only. -->
-<input name="kiyaku" type="checkbox" id="kiyaku" checked aria-describedby="kiyaku-status">
+<input name="kiyaku" type="checkbox" id="kiyaku" checked="" aria-describedby="kiyaku-status">
 <label for="kiyaku">規約に同意する <span id="kiyaku-status" role="status" aria-live="polite">(同意済み)</span></label>
 </div>
 <!-- WCAG 3.2.1: Submit button does not trigger context changes on focus. Only triggers form submission on click/submit event. -->
@@ -623,13 +623,13 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
     })();
   </script>
 
-  <div id="timeout-warning" style="display:none; position:static;" role="alertdialog" aria-modal="true" aria-labelledby="timeout-title" aria-describedby="timeout-desc">
+  <div id="timeout-warning" style="display:none; position:static; z-index: 1000;" role="alertdialog" aria-modal="true" aria-labelledby="timeout-title" aria-describedby="timeout-desc">
     <div class="timeout-content" style="max-height: 80vh; overflow-y: auto;">
       <h2 id="timeout-title">Your session is about to expire</h2>
       <p id="timeout-desc">For your security, we will log you out soon due to inactivity. Would you like to stay signed in?</p>
-      <div class="timeout-buttons">
-        <button id="continue-session">Continue Session</button>
-        <button id="log-out">Log Out</button>
+      <div class="timeout-buttons" style="padding: 5px;">
+        <button id="continue-session" style="outline: 2px solid blue; margin: 5px;">Continue Session</button>
+        <button id="log-out" style="outline: 2px solid blue; margin: 5px;">Log Out</button>
       </div>
     </div>
   </div>
