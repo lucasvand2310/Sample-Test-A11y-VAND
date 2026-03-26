@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="ja">
+<html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>株式会社ヴァンド - <abbr title="User Experience / User Interface">UX/UI</abbr>デザイン、ウェブアプリケーションおよびオフショア開発 | VAND Inc.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>株式会社ヴァンド ( VAND Inc. )</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet">
 <link href="assets/css/shared.css" rel="stylesheet" type="text/css">
 <link href="assets/css/common.css?3" rel="stylesheet" type="text/css">
@@ -25,179 +25,13 @@
   gtag('config', 'UA-174534418-1');
 </script>
 
-
-<style>
-body {
-  line-height: 1.5;
-  letter-spacing: 0.12em;
-  word-spacing: 0.16em;
-}
-p {
-  margin-bottom: 2em;
-}
-a:focus, input:focus, textarea:focus, button:focus {
-  outline: 2px solid #007bff;
-  outline-offset: 2px;
-}
-
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background-color: #000;
-  color: #fff;
-  padding: 8px;
-  z-index: 100;
-  text-decoration: none;
-}
-
-  .skip-link:focus {
-    top: 0;
-  }
-
-  /* Session Timeout Warning Modal */
-  #timeout-warning {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    backdrop-filter: blur(4px);
-  }
-  .timeout-content {
-    background: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    max-width: 440px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    color: #333;
-  }
-  .timeout-content h2 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    color: #000;
-    font-size: 24px;
-    font-family: 'DM Sans', sans-serif;
-  }
-  .timeout-content p {
-    margin-bottom: 25px;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-  }
-  .timeout-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-  }
-  .timeout-buttons button {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 15px;
-    transition: all 0.2s ease;
-  }
-  #continue-session {
-    background-color: #000;
-    color: #fff;
-  }
-  #log-out {
-    background-color: #f0f0f0;
-    color: #333;
-  }
-  .timeout-buttons button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  .timeout-buttons button:active {
-    transform: translateY(0);
-  }
-
-  /* WCAG 2.3.3: Motion Animation Support */
-  @media (prefers-reduced-motion: reduce) {
-    *, ::before, ::after {
-      animation-delay: -1ms !important;
-      animation-duration: 1ms !important;
-      animation-iteration-count: 1 !important;
-      background-attachment: initial !important;
-      scroll-behavior: auto !important;
-      transition-duration: 0s !important;
-      transition-delay: 0s !important;
-    }
-  }
-
-  .no-animations *, .no-animations ::before, .no-animations ::after {
-    animation-duration: 0s !important;
-    transition-duration: 0s !important;
-  }
-
-  /* WCAG 3.3.5: Visually-hidden class for accessible help text */
-  .visually-hidden {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-    white-space: nowrap !important;
-    border: 0 !important;
-  }
-
-  /* WCAG 3.1.3: Glossary Styling */
-  .glossary-term {
-    text-decoration: underline dotted;
-    cursor: help;
-    color: inherit;
-  }
-  #glossary {
-    text-align: left;
-    background: #444;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-  }
-  #glossary h3 {
-    margin-top: 0;
-    font-size: 18px;
-    border-bottom: 1px solid #666;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-  }
-  #glossary dl {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 10px 20px;
-    font-size: 14px;
-    line-height: 1.4;
-  }
-  #glossary dt {
-    font-weight: bold;
-    color: #FDBF08;
-  }
-  #glossary dd {
-    margin: 0;
-    color: #ccc;
-  }
-</style>
 </head>
 
 <body>
-<a href="#about" class="skip-link">Skip to main content</a>
-<header><h1 lang="en">VAND</h1></header>
+<header><h1>VAND</h1></header>
 
-<main>
 <section id="about">
-<h2 lang="en">About VAND<span lang="ja">VANDについて</span></h2>
+<h2>About VAND<span>VANDについて</span></h2>
 <h3>わたしたちは、ただの制作会社ではありません。<br>
 お客様のプロジェクトを成功へと導く、ディレクション集団です。</h3>
 <p>わたしたちの仕事は、顧客理解からはじまります。<br>
@@ -207,7 +41,7 @@ a:focus, input:focus, textarea:focus, button:focus {
 <ul style="margin-bottom:100px;">
 <li>お客様とのコミュニケーションを大事にします。ちょっとしつこいくらい質問するかもしれません。</li>
 <li>お客様のプロジェクトの最適解を、お客様と一緒に真剣に考えます。</li>
-<li>ヒアリングをもとに、<a href="#def-uxui" class="glossary-term"><abbr title="User Experience / User Interface">UX/UI</abbr></a>/システム仕様を専門スタッフがとことん考え最良な設計をいたします。</li>
+<li>ヒアリングをもとに、UX/UI/システム仕様を専門スタッフがとことん考え最良な設計をいたします。</li>
 <li>綿密に設計されたドキュメントをもとに、システム開発を行います。</li>
 <li>開発された成果物は、しっかりと品質管理を行い、責任を持ってお客様へ納品いたします。</li>
 </ul>
@@ -220,32 +54,31 @@ a:focus, input:focus, textarea:focus, button:focus {
 <h3>グミベトナムとは？</h3>
 <p>グミベトナム（gumi Vietnam Co., Ltd.）は、ベトナムのホーチミンに拠点を持つシステム会社です。<br>
 Webアプリケーションからスマートフォンアプリ、オープン系システムなど幅広い開発が可能です。<br>
-VR、<a href="#def-ar" class="glossary-term"><abbr title="Augmented Reality">AR</abbr></a>、AIを用いたデジタルコンテンツ制作も得意としています。</p>
+VR、AR、AIを用いたデジタルコンテンツ制作も得意としています。</p>
 </div>
 -->
 </section>
 
 
-<section role="region" aria-label="Our Services">
 <section id="Servise" class="black">
-<h2 lang="en">Our Service<span lang="ja">わたしたちができること</span></h2>
+<h2>Our Service<span>わたしたちができること</span></h2>
 
 <ul>
 <li>
-<h3><a href="#def-uxui" class="glossary-term"><abbr title="User Experience / User Interface">UX/UI</abbr></a></h3>
-<p>Webサイトからスマートフォンアプリ、デジタルサイネージ、業務システムまで様々な<a href="#def-uxui" class="glossary-term"><abbr title="User Experience / User Interface">UX/UI</abbr></a>を提供いたします。<br>
+<h3>UX/UI</h3>
+<p>Webサイトからスマートフォンアプリ、デジタルサイネージ、業務システムまで様々なUX/UIを提供いたします。<br>
 お客様との綿密なコミュニケーションのもとに、ビジネス上の課題を解決する最適な手段を導き出し、ご要望に最も適したご提案をさせていただきます。</p>
 </li>
 <li>
 <h3>Webアプリケーション開発</h3>
 <p>Webサイトやアプリのバックエンドシステム構築から大規模な業務系システムまで、様々なプロジェクトに対応可能です。<br>
-新規での開発はもちろん、<a href="#def-api" class="glossary-term"><abbr title="Application Programming Interface">API</abbr></a>や既存システムとの連携なども対応いたします。</p>
+新規での開発はもちろん、APIや既存システムとの連携なども対応いたします。</p>
 </li>
 <li>
 <h3>スマートフォンアプリ開発</h3>
 <p>洗練されたUXを実現するiPhone・Androidアプリを開発しお客様のビジネスモデルを最大限サポートします。<br>
 iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javascriptでのハイブリッドアプリの制作、広告モデル型アプリなど広範囲のアプリの制作が可能です。<br>
-また、<a href="#def-mr2go" class="glossary-term"><abbr title="Mixed Reality to Go">MR2GO</abbr></a>対応アプリ開発、<abbr title="Augmented Reality">AR</abbr>系プロモーションアプリ開発では国内有数の開発実績がございます。</p>
+また、MR2GO対応アプリ開発、AR系プロモーションアプリ開発では国内有数の開発実績がございます。</p>
 </li>
 <li>
 <h3>ラボ型オフショア開発支援</h3>
@@ -256,11 +89,10 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
 </li>
 </ul>
 </section>
-</section>
 
 
-<section id="Profile" class="pd" aria-label="Company Profile">
-<h2 lang="en">Company Profile<span lang="ja">会社概要</span></h2>
+<section id="Profile" class="pd">
+<h2>Company Profile<span>会社概要</span></h2>
 
 <dl>
 <dt>会社名</dt>
@@ -350,84 +182,26 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
 
 </section>
 
-</main>
-<footer style="background-color: #333; color: #fff; padding: 40px 20px; text-align: center;">
-<section id="contact" class="black">
-<h2 lang="en">Contact us<span lang="ja">お問い合わせ</span></h2>
+<section id="Servise" class="black">
+<h2>Contact us<span>お問い合わせ</span></h2>
 
-<!-- WCAG 3.2.1: No Change on Focus - All form fields have proper labels and do not trigger context changes on focus -->
 <form id="form">
-<!-- WCAG 3.3.1: Error Identification - Error messages are provided for all required fields -->
-<p class="label">
-  <label for="name">お名前<span class="required-mark" aria-label="必須">*</span></label>
-  <input name="name" type="text" class="require" id="name" autocomplete="name" aria-label="お名前" aria-required="true" aria-describedby="name-error name-desc">
-  <span id="name-error" class="error-message" role="alert" aria-live="polite"></span>
-  <span id="name-desc" class="visually-hidden">Please enter your full name.</span>
-</p><p class="label">
-  <label for="inc">会社名</label>
-  <input name="inc" type="text" id="inc" autocomplete="organization" aria-label="会社名" aria-describedby="inc-desc">
-  <span id="inc-desc" class="visually-hidden">Enter the name of your company.</span>
-</p><!-- WCAG 3.2.1: Email input does not trigger context changes on focus. Uses change event for validation only. -->
-<p class="label">
-  <label for="mail">メールアドレス<span class="required-mark" aria-label="必須">*</span></label>
-  <input name="mail" type="email" class="require" id="mail" inputmode="email" autocomplete="email" aria-label="メールアドレス" aria-required="true" aria-describedby="mail-error mail-desc" required pattern=".+@.+\..+" title="Please enter a valid email address.">
-  <span id="mail-error" class="error-message" role="alert" aria-live="polite"></span>
-  <span id="mail-desc" class="visually-hidden">Please enter a valid email address so we can contact you.</span>
-</p><!-- WCAG 3.2.1: Textarea does not trigger context changes on focus. Uses change/keyup events for validation only. -->
-<p class="label">
-  <label for="textarea">お問い合わせ内容</label>
-  <textarea name="message" maxlength="500" id="textarea" aria-label="お問い合わせ内容" aria-describedby="textarea-error textarea-desc" autocomplete="on"></textarea>
-  <span id="textarea-error" class="error-message" role="alert" aria-live="polite"></span>
-  <span id="textarea-desc" class="visually-hidden">Please enter your message (maximum 500 characters).</span>
-</p>
+<p class="label"><h4>お名前</h4><input name="name" type="text" class="require" id="name"></p>
+<p class="label"><h4>会社名</h4><input name="inc" type="text" id="inc"></p>
+<p class="label"><h4>メールアドレス</h4><input name="mail" type="email" class="require" id="mail" inputmode="email"></p>
+<p class="label"><h4>お問い合わせ内容</h4><textarea name="textarea" maxlength="500" id="textarea"></textarea></p>
+
 
 <div class="label relative kiyaku">
-<h3 class="kiyaku">個人情報の取扱いについて</h3>
-<p><a href="/contact/kiyaku/" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'mywindow6', 'width=800, height=600, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="textLink" style="color:#555555; font-size: 16px; padding: 10px;">個人情報保護方針全文 (新規タブで開きます)</a>を読み、内容に同意いただけない場合は「規約に同意する」の選択を解除してください。</p>
-<!-- WCAG 3.2.1: Checkbox does not trigger context changes on focus. Uses click/change events only. -->
-<input name="kiyaku" type="checkbox" id="kiyaku" checked aria-describedby="kiyaku-status">
-<label for="kiyaku">規約に同意する <span id="kiyaku-status" role="status" aria-live="polite">(同意済み)</span></label>
+<h6 class="kiyaku">個人情報の取扱いについて</h6>
+<p><a href="/contact/kiyaku/" onclick="window.open(this.href, 'mywindow6', 'width=800, height=600, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="textLink">個人情報の取扱いについての規約</a>を読み、内容に同意いただけない場合はチェックを外してください。</p>
+<label><input name="kiyaku" type="checkbox" id="kiyaku"  checked>規約に同意する</label>
 </div>
-<!-- WCAG 3.2.1: Submit button does not trigger context changes on focus. Only triggers form submission on click/submit event. -->
-<button type="submit" id="submit-button" aria-label="お問い合わせを送信" style="background-color:#333333; color:#FFFFFF; min-width: 100px; min-height: 44px; padding: 8px 16px;">送信</button>
 </form>
-<div aria-live="polite" id="form-status" style="margin-top: 20px; font-weight: bold; color: #FFFFFF;"></div>
+
+<div id="send" class="disabled"><span>送信</span></div>
 
 </section>
-  <nav aria-label="Footer Navigation">
-    <ul style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-      <li><a href="#about" lang="en" style="color: #fff; text-decoration: none;">About VAND Inc.</a></li>
-      <li><a href="#Servise" lang="en" style="color: #fff; text-decoration: none;">Our Services</a></li>
-      <li><a href="#Profile" lang="en" style="color: #fff; text-decoration: none;">Company Profile</a></li>
-      <li><a href="#contact" lang="en" style="color: #fff; text-decoration: none;">Contact Us</a></li>
-      <li><a href="#accessibility" lang="en" style="color: #fff; text-decoration: none;">Help</a></li>
-    </ul>
-  </nav>
-    <section id="accessibility" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #555;">
-    <p>For optimal viewing, you can customize text and background colors in your browser settings. <a href='https://support.google.com/chrome/answer/7349088?hl=en' style="color: #fff;">Learn more about customizing Chrome's accessibility settings</a>.</p>
-    <!-- WCAG 2.3.3: Motion animation toggle -->
-    <button id="toggle-animations" style="background-color: transparent; color: #fff; border: 1px solid #fff; padding: 5px 10px; cursor: pointer; border-radius: 4px; font-size: 14px; margin-top: 10px;">Disable Animations</button>
-  </section>
-
-  <section id="glossary" aria-labelledby="glossary-title">
-    <h3 id="glossary-title">Technical Terms Glossary (用語集)</h3>
-    <dl>
-      <dt id="def-uxui">UX/UI</dt>
-      <dd>User Experience (ユーザー体験) / User Interface (ユーザーインターフェース). 設計から見た目まで、ユーザーが使いやすく心地よいサービスを作るための設計手法です。<br>(How users feel when using a website or app, and how the interface looks and works)</dd>
-      
-      <dt id="def-api">API</dt>
-      <dd>Application Programming Interface. 異なるソフトウェアやプログラム同士が情報をやり取りするための窓口となる仕組みです。<br>(A way for different computer systems to talk to each other)</dd>
-      
-      <dt id="def-ar">AR</dt>
-      <dd>Augmented Reality (拡張現実). 現実の風景にデジタル情報を重ねて表示する技術です。<br>(Technology that puts digital images on top of the real world)</dd>
-      
-      <dt id="def-mr2go">MR2GO</dt>
-      <dd>VAND社が提供する、手軽に複合現実（Mixed Reality）体験を導入できるソリューションの名称です。<br>(A simple way to use Mixed Reality technology to combine digital images with the real world)</dd>
-    </dl>
-  </section>
-
-  <p style="margin-top: 20px; font-size: 14px; color: #ccc;">&copy; 2025 VAND Inc. All rights reserved.</p>
-</footer>
 
 <div id="overlay"></div>
 <div id="complete"></div>
@@ -437,180 +211,6 @@ iPhone・Android・タブレット端末のアプリ開発からHTML5+CSS3+Javas
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
   <script src="assets/js/function.js"></script>
-  <script>
-    // WCAG 1.4.1: Non-sensory indication of checkbox state
-    // WCAG 3.2.1: Using 'change' event instead of 'focus' - no context change on focus
-    const kiyakuCheckbox = document.getElementById('kiyaku');
-    const kiyakuStatus = document.getElementById('kiyaku-status');
-
-    kiyakuCheckbox.addEventListener('change', function() {
-      if (this.checked) {
-        kiyakuStatus.textContent = '(同意済み)';
-      } else {
-        kiyakuStatus.textContent = '';
-      }
-    });
-
-    // SC 3.3.3: Input Validation Suggestions for email field
-    const emailInput = document.getElementById('mail');
-    const emailError = document.getElementById('mail-error');
-
-    emailInput.addEventListener('invalid', function(event) {
-      if (emailInput.validity.valueMissing) {
-        emailError.textContent = 'Please enter your email address.';
-      } else if (emailInput.validity.typeMismatch || emailInput.validity.patternMismatch) {
-        emailError.textContent = 'Please enter a valid email address.';
-      } else {
-        emailError.textContent = '';
-      }
-      emailError.style.display = 'block';
-    });
-
-    // Clear error message when user starts typing and input becomes valid
-    emailInput.addEventListener('input', function() {
-      if (emailInput.validity.valid) {
-        emailError.textContent = '';
-        emailError.style.display = 'none';
-      }
-    });
-  </script>
-
-  <script>
-    // WCAG 2.2.6: Session Timeout Warning Implementation
-    (function() {
-      const timeoutWarning = document.getElementById('timeout-warning');
-      const continueSessionButton = document.getElementById('continue-session');
-      const logOutButton = document.getElementById('log-out');
-      
-      let warningTimeout;
-      let logoutTimeout;
-      
-      // Default timers: 25 minutes for warning, 30 minutes for logout
-      // For testing purposes, these can be shortened.
-      const WARNING_DELAY = 25 * 60 * 1000; 
-      const LOGOUT_DELAY = 30 * 60 * 1000; 
-      
-      let lastFocusedElement;
-
-      function showTimeoutWarning() {
-        lastFocusedElement = document.activeElement;
-        timeoutWarning.style.display = 'flex';
-        continueSessionButton.focus();
-        
-        // Trap focus inside modal
-        document.addEventListener('keydown', trapFocus);
-      }
-
-      function hideTimeoutWarning() {
-        timeoutWarning.style.display = 'none';
-        document.removeEventListener('keydown', trapFocus);
-        if (lastFocusedElement) lastFocusedElement.focus();
-      }
-
-      function trapFocus(e) {
-        if (e.key === 'Tab') {
-          const focusableElements = timeoutWarning.querySelectorAll('button');
-          const firstElement = focusableElements[0];
-          const lastElement = focusableElements[focusableElements.length - 1];
-
-          if (e.shiftKey) {
-            if (document.activeElement === firstElement) {
-              lastElement.focus();
-              e.preventDefault();
-            }
-          } else {
-            if (document.activeElement === lastElement) {
-              firstElement.focus();
-              e.preventDefault();
-            }
-          }
-        }
-      }
-
-      function doLogout() {
-        // In a real application, you would perform a redirect to logout or clear session
-        alert('Your session has expired due to inactivity. You have been logged out.');
-        window.location.href = '#logout';
-        location.reload();
-      }
-
-      function resetTimers() {
-        if (timeoutWarning.style.display !== 'flex') {
-          clearTimeout(warningTimeout);
-          clearTimeout(logoutTimeout);
-          warningTimeout = setTimeout(showTimeoutWarning, WARNING_DELAY);
-          logoutTimeout = setTimeout(doLogout, LOGOUT_DELAY);
-        }
-      }
-
-      continueSessionButton.addEventListener('click', function() {
-        hideTimeoutWarning();
-        resetTimers();
-      });
-
-      logOutButton.addEventListener('click', function() {
-        doLogout();
-      });
-
-      // Track user activity to reset the timeout
-      const activities = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'];
-      activities.forEach(name => {
-        window.addEventListener(name, resetTimers, { passive: true });
-      });
-
-      // Initial start
-      resetTimers();
-      
-      // Exposition for manual testing:
-      // To test immediately, run in console: 
-      // window.testTimeout(10000); // 10 seconds
-      window.testTimeout = function(ms) {
-        clearTimeout(warningTimeout);
-        clearTimeout(logoutTimeout);
-        warningTimeout = setTimeout(showTimeoutWarning, ms);
-        logoutTimeout = setTimeout(doLogout, ms + 5000);
-      };
-    })();
-  </script>
-
-  <div id="timeout-warning" style="display:none;" role="alertdialog" aria-modal="true" aria-labelledby="timeout-title" aria-describedby="timeout-desc">
-    <div class="timeout-content">
-      <h2 id="timeout-title">Your session is about to expire</h2>
-      <p id="timeout-desc">For your security, we will log you out soon due to inactivity. Would you like to stay signed in?</p>
-      <div class="timeout-buttons">
-        <button id="continue-session">Continue Session</button>
-        <button id="log-out">Log Out</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // WCAG 2.3.3: Motion Animation Toggle Logic
-    (function() {
-      const toggleBtn = document.getElementById('toggle-animations');
-      const body = document.body;
-      
-      const updateButtonText = (disabled) => {
-        toggleBtn.textContent = disabled ? 'Enable Animations' : 'Disable Animations';
-        toggleBtn.setAttribute('aria-pressed', disabled);
-      };
-
-      // Check localStorage for user preference
-      const savedPreference = localStorage.getItem('animations-disabled');
-      if (savedPreference === 'true') {
-        body.classList.add('no-animations');
-        updateButtonText(true);
-      } else {
-        updateButtonText(false);
-      }
-
-      toggleBtn.addEventListener('click', function() {
-        const isDisabled = body.classList.toggle('no-animations');
-        localStorage.setItem('animations-disabled', isDisabled);
-        updateButtonText(isDisabled);
-      });
-    })();
-  </script>
 
 </body>
 </html>
