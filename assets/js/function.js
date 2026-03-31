@@ -39,121 +39,85 @@ $.ajax({
 	function VA() {
 		
 		$(document).on("click","#kiyaku", function(){
-	if($(this).is(":checked") ){
-$(this).removeClass("require");		
-	}else {
-		$(this).addClass("require");		
-	}
+			if($(this).is(":checked") ){
+				$(this).removeClass("require");
+				$("#error-kiyaku").text("");
+			}else {
+				$(this).addClass("require");
+				$("#error-kiyaku").text("規約に同意してください");
+			}
+		});	
+		
+		$("body").on("change keyup", "#inc", function(){
+			var length = $(this).val().length;
+			if( length >= 1 ){
+				$(this).removeClass("require");
+				$("#error-inc").text("");
+			}else {
+				$(this).addClass("require");
+				$("#error-inc").text("会社名を入力してください");
+			}
+		});
+ 
+		$("body").on("change keyup", "#name", function(){
+			var length = $(this).val().length;
+			if( length >= 1 ){
+				$(this).removeClass("require");
+				$("#error-name").text("");
+			}else {
+				$(this).addClass("require");
+				$("#error-name").text("お名前を入力してください");
+			}
+		});
+ 
+		$("body").on("change keyup", "#mail", function(){
+			var length = $(this).val().length;
+			if( length >= 1 ){
+				if(!$(this).val().match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)){
+					$(this).addClass("require error");
+					$("#error-mail").text("有効なメールアドレスを入力してください");
+					$("#mail+div span").text("");
+				}else {
+					$(this).removeClass("require error");
+					$("#error-mail").text("");
+					var Confirm =$(this).val();
+					$("#mail+div span").text(Confirm);
+				}
+			}else {
+				$(this).addClass("require");
+				$(this).removeClass("error");
+				$("#error-mail").text("メールアドレスを入力してください");
+				$("#mail+div span").text("");
+			}
+		});
 
-	
-	});	
-		
-			$("body").on("change keyup", "#inc", function(){
-	var length = $(this).val().length;
-	
-	if( length >=1 ){
-		
-	  $(this).removeClass("require");
-	
+		$("body").on("change keyup", "#textarea", function(){
+			var length = $(this).val().length;
+			if( length >= 1 ){
+				if($(this).val().match(/[<(.*)>.*<\/\1>]/)){
+					$(this).addClass("require error");
+					$("#error-textarea").text("HTMLコードは入力できません");
+					$("#message+div span").text("");
+				}else {
+					$(this).removeClass("require error");
+					$("#error-textarea").text("");
+					var Confirm =$(this).val();
+					$("#message+div span").text(Confirm);
+				}
+			}else {
+				$(this).removeClass("require error");
+				$("#error-textarea").text("");
+				$("#message+div span").text("");
+			}
+		});
 
-		
-	}else {
-		$(this).addClass("require");
-		
-	}
-	
-	
- });
- 
- 
- 
-	 $("body").on("change keyup", "#name", function(){
-	var length = $(this).val().length;
-	if( length >=1 ){
-		
-		
-	$(this).removeClass("require");
-		
-	}else {
-		$(this).addClass("require");
-	}
-	
-	
- });
- 
- 
-		
-	$("body").on("change", "#mail", function(){
-	var length = $(this).val().length;
-	if( length >=1 ){
-		
-		if(!$(this).val().match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)){
-			$(this).next().next(".error").remove();
-  $(this).next().after("<div class='error'>不正なメールアドレスです</div>");
-  $(this).addClass("require error");
-		$("#mail+div span").text("");
-  }else {
-	  $(this).removeClass("require error");
-		var Confirm =$(this).val();
-		$("#mail+div span").text(Confirm);
-		$(this).next().next(".error").remove();
-  }
-  
-		
-	}else {
-		$(this).addClass("require");
-		$(this).removeClass("error");
-		$("#mail+div span").text("");
-		$(this).next().next(".error").remove();
-	}
-	
-
- });
- 
- 
- 
- 
- 
- $("body").on("change keyup", "#textarea", function(){
-	var length = $(this).val().length;
-	if( length >=1 ){
-		
-		if($(this).val().match(/[<(.*)>.*<\/\1>]/)){
-			$(this).next().next(".error").remove();
-  $(this).next().after("<div class='error'>HTMLコードは入力できません</div>");
-  $(this).addClass("require error");
-		$("#message+div span").text("");
-  }else {
-	  $(this).removeClass("require error");
-		var Confirm =$(this).val();
-		$("#message+div span").text(Confirm);
-		$(this).next().next(".error").remove();
-  }
-  
-		
-	}else {
-		$(this).addClass("require");
-		$(this).removeClass("error");
-		$("#message+div span").text("");
-		$(this).next().next(".error").remove();
-	}
-	
-	
- });
- 
- 
- 
- 
- $("body").on("change", "form input,form textarea", function(){
-		
-	var length = $(".require").length;
-	if( length == 0 ){
-		$("#submit-button").removeClass("disabled");
-	}else {
-		$("#submit-button").addClass("disabled");
-	}
-	
-	
- });
+		$("body").on("change", "form input,form textarea", function(){
+			var length = $(".require").length;
+			if( length == 0 ){
+				$("#submit-button").removeClass("disabled");
+			}else {
+				$("#submit-button").addClass("disabled");
+			}
+		});
 	}
 VA();

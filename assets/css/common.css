@@ -166,6 +166,15 @@ transition: all 0.4s cubic-bezier(.07,.91,.14,.84) 0s;
 .error { color:#E81B1F!important; display:block; }
 .kiyaku label.error { margin:0; display:block;  }
 
+.error-message {
+  color: #E81B1F;
+  display: block;
+  font-size: 13px;
+  margin-top: 5px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
 /* Remove the blur effect from the labels to ensure they are readable */
 label {
   filter: none !important; /* Override any existing blur filters */
