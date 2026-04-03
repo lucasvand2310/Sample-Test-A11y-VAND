@@ -1,4 +1,5 @@
-$(document).on("click","#submit-button:not(#submit-button.disabled)", function(){ 
+$(document).on("click","#submit-button:not(#submit-button.disabled)", function(e){ 
+		e.preventDefault();
 
 		var company = $("#inc").val();
 		var name = $("#name").val();
@@ -20,7 +21,13 @@ $.ajax({
 	   setTimeout(function(){
 		$("html").removeClass("msg");
 		$("#overlay").attr("aria-hidden", "true");
-	$("body,html").stop().animate({scrollTop:0},300);
+		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (prefersReducedMotion) {
+			$("body,html").stop().scrollTop(0);
+		} else {
+			$("body,html").stop().animate({scrollTop:0},300);
+		}
+
 	$("html").addClass("complete");
 		},2000);
 	
