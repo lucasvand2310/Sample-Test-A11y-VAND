@@ -14,10 +14,12 @@ $.ajax({
    data: {company:company,name:name,mail:mail,message:message},
    success: function(msg){
     $("html").addClass("msg");
+    $("#overlay").attr("aria-hidden", "false");
    },
    complete: function(){
 	   setTimeout(function(){
 		$("html").removeClass("msg");
+		$("#overlay").attr("aria-hidden", "true");
 	$("body,html").stop().animate({scrollTop:0},300);
 	$("html").addClass("complete");
 		},2000);
@@ -114,9 +116,9 @@ $.ajax({
 		$("body").on("change", "form input,form textarea", function(){
 			var length = $(".require").length;
 			if( length == 0 ){
-				$("#submit-button").removeClass("disabled");
+				$("#submit-button").removeClass("disabled").attr("aria-disabled", "false");
 			}else {
-				$("#submit-button").addClass("disabled");
+				$("#submit-button").addClass("disabled").attr("aria-disabled", "true");
 			}
 		});
 	}
