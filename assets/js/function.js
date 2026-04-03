@@ -1,4 +1,4 @@
-$(document).on("click","#submit-button:not(#submit-button.disabled)", function(e){ 
+$(document).on("click","#submit-button", function(e){ 
 		e.preventDefault();
 
 		var company = $("#inc").val();
@@ -123,9 +123,9 @@ $.ajax({
 		$("body").on("change", "form input,form textarea", function(){
 			var length = $(".require").length;
 			if( length == 0 ){
-				$("#submit-button").removeClass("disabled").attr("aria-disabled", "false");
+				$("#submit-button").removeClass("disabled").attr("aria-disabled", "false").prop("disabled", false);
 			}else {
-				$("#submit-button").addClass("disabled").attr("aria-disabled", "true");
+				$("#submit-button").addClass("disabled").attr("aria-disabled", "true").prop("disabled", true);
 			}
 		});
 	}

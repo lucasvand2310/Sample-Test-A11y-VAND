@@ -194,11 +194,13 @@ textarea:focus ~ .hint-text {
 }
 
 input[type=checkbox] {
-  width: 18px;
-  height: 18px;
+  width: 24px; /* Basic size increase */
+  height: 24px;
   cursor: pointer;
   border: 2px solid #FFF;
   accent-color: #FDBF08;
+  padding: 10px; /* Increase target area */
+  margin: 10px;  /* Ensure spacing */
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -212,15 +214,20 @@ input[type=checkbox] {
 
 .skip-link {
   position: absolute;
-  top: -50px;
+  top: -60px;
   left: 0;
   background: #FDBF08;
   color: #444;
-  padding: 8px;
+  padding: 12px 20px; /* Increased to meet 44px height */
   z-index: 100;
   transition: top 0.3s;
   text-decoration: none;
   font-weight: bold;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .skip-link:focus {
@@ -253,6 +260,12 @@ header nav ul li a {
   font-weight: bold;
   font-size: 15px;
   transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 10px;
 }
 header nav ul li a:hover {
   color: #FDBF08;
@@ -286,6 +299,12 @@ footer nav ul li a {
   text-decoration: none;
   font-size: 15px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 15px;
 }
 footer nav ul li a:hover {
   text-decoration: underline;
