@@ -1,6 +1,11 @@
 @charset "utf-8";
 body {font-family:  "Yu Gothic","Hiragino Kaku Gothic Pro", YuGothic, Meiryo, Osaka, "MS PGothic", sans-serif; color:#666; line-height:2; }
 *:focus { outline: 2px solid #FDBF08 !important; outline-offset: 2px; }
+a { color: #444; text-decoration: underline; transition: all 0.3s ease; }
+a:hover { color: #FDBF08; text-decoration: none; }
+a abbr { border-bottom: none; }
+
+
 header { height:70vh; position:relative; overflow:hidden; }
 header:before { content:""; display:block; width:200%; height:150%; transform:rotate(-3deg) translateX(0%); position:absolute; bottom:0; left:0%; background-color:#444444; transform-origin:0% 100%; }
 header h1 { width:100%; height:100%; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background-image:url(../img/logo.svg); background-repeat:no-repeat; background-position:center; background-size:30% auto; text-indent:-9999px; }
@@ -17,6 +22,9 @@ section h3 { font-size:120%; margin-bottom:1em; color:#444; }
 section.black h2 { color:#fff; }
 section.black h2 span { color:#ccc; }
 section.black h3 {  color:#fff; }
+section.black a { color: #FDBF08; text-decoration: underline; }
+section.black a:hover { text-decoration: none; }
+
 
 #about ul { width:48em; margin:3em auto 0 auto; text-align:left; font-size:90%; }
 #about ul:before { content:""; display:block; width:2em; height:1px; background-color:#444; margin:0 auto 3em auto; }
@@ -69,8 +77,8 @@ dd { -ms-flex-preferred-size: calc( 100% - 10em );
                flex-basis: calc( 100% - 10em );
 			   max-width:calc( 100% - 10em );}
 			   
-dd a { color:#444; text-decoration:underline; }
-dd a:hover { text-decoration:none; }
+dd a { text-decoration:underline; }
+dd a:hover { text-decoration:none; color: #FDBF08; }
 			   
 input[type=text],input[type=email],textarea { -webkit-appearance:none; appearance:none; border:none; background:none; border-radius:none; background-color:#999; padding:1em; border-radius:.2em; width:100%; font-size:100%; box-sizing:border-box; }
 textarea { font-size:16px; height:8em; resize:none; }
