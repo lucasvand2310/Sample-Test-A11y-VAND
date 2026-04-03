@@ -201,6 +201,38 @@ textarea:focus ~ .hint-text {
   transform: translateX(5px);
 }
 
+.plain-language-summary {
+  background-color: #f6f6f6;
+  border-left: 6px solid #FDBF08;
+  padding: 1.5em 2em;
+  margin: 40px auto;
+  text-align: left;
+  max-width: 800px;
+  font-size: 95%;
+  line-height: 1.6;
+}
+.plain-language-summary h3 {
+  margin-top: 0;
+  font-size: 1.1em;
+  color: #444;
+  margin-bottom: 0.5em;
+}
+.plain-language-summary p {
+  margin-bottom: 0;
+  color: #666;
+}
+
+section.black .plain-language-summary {
+  background-color: rgba(255,255,255,0.1);
+  border-left-color: #FDBF08;
+}
+section.black .plain-language-summary h3 {
+  color: #FDBF08;
+}
+section.black .plain-language-summary p {
+  color: #eee;
+}
+
 input[type=checkbox] {
   width: 24px; /* Basic size increase */
   height: 24px;
