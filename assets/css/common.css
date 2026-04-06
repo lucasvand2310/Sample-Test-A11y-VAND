@@ -1,6 +1,6 @@
 @charset "utf-8";
-body {font-family:  "Yu Gothic","Hiragino Kaku Gothic Pro", YuGothic, Meiryo, Osaka, "MS PGothic", sans-serif; color:#666; line-height:2; }
-*:focus { outline: 2px solid #FDBF08 !important; outline-offset: 2px; }
+body {font-family:  "Yu Gothic","Hiragino Kaku Gothic Pro", YuGothic, Meiryo, Osaka, "MS PGothic", sans-serif; color:#666; line-height: 1.6; }
+*:focus { outline: 2px solid #FDBF08; outline-offset: 2px; }
 a { color: #444; text-decoration: underline; transition: all 0.3s ease; }
 a:hover { color: #FDBF08; text-decoration: none; }
 a abbr { border-bottom: none; }
@@ -11,14 +11,21 @@ header:before { content:""; display:block; width:200%; height:150%; transform:ro
 header h1 { width:100%; height:100%; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background-image:url(../img/logo.svg); background-repeat:no-repeat; background-position:center; background-size:30% auto; text-indent:-9999px; }
 
 section { padding:120px 0px 0px 0px; text-align:center; }
+section p, .intro-tagline, .section p, .plain-language-summary p, .kiyaku p, footer p { 
+  max-width: 80ch; 
+  margin-left: auto; 
+  margin-right: auto; 
+  text-align: left; 
+  margin-bottom: 2.4em; 
+}
 section.black {  padding-bottom:120px; position:relative; overflow:hidden;background-color:#444444; }
 section.black.skew { background-color:transparent; }
 section.black.skew:before { content:""; display:block; width:200%; height:150%; transform:rotate(-3deg) translateX(0%); position:absolute; bottom:0; left:0%; background-color:#444444; transform-origin:0% 100%; z-index:-1; }
 section.pd {padding-bottom:120px; }
 section h2 { font-size:300%; color:#444; font-family:'DM Sans',Arial, Helvetica, sans-serif; font-weight:normal; margin-bottom:1em; line-height:1.5; }
 section h2 span { font-size:11px; color:#999; display:block;font-family:  "Yu Gothic","Hiragino Kaku Gothic Pro", YuGothic, Meiryo, Osaka, "MS PGothic", sans-serif; }
-section h3 { font-size:120%; margin-bottom:1em; color:#444; }
-.intro-tagline { font-size:120%; margin-bottom:1em; color:#444; font-weight: bold; display: block; }
+section h3 { font-size:120%; margin-bottom:1em; color:#444; text-align: center; }
+.intro-tagline { font-size:120%; color:#444; font-weight: bold; display: block; }
 section.black h2 { color:#fff; }
 section.black h2 span { color:#ccc; }
 section.black h3 {  color:#fff; }
@@ -29,7 +36,7 @@ section.black a:hover { text-decoration: none; }
 #about ul { width:48em; margin:3em auto 0 auto; text-align:left; font-size:90%; }
 #about ul:before { content:""; display:block; width:2em; height:1px; background-color:#444; margin:0 auto 3em auto; }
 #about ul li:before { content:""; display:inline-block; width:1em; height:2px; background-color:#444; vertical-align:middle; margin-right:.5em; }
-#about ul li { margin-bottom:.5em; }
+#about ul li { margin-bottom: 0.8em; }
 
 #about figure { margin-top:6vw; }
 #about figure img { width:100%; height:auto; max-width:800px; }
@@ -54,7 +61,7 @@ section.black a:hover { text-decoration: none; }
                flex-basis: 50%;
 			   max-width:50%;
 			   }
-#Servise ul li p { font-size:90%; }
+#Servise ul li p { font-size:90%; margin-bottom: 1em; }
 
 dl { max-width:800px; margin:0 auto; text-align:left; padding:1em 0; border-bottom:1px solid #eee; 
 display: -webkit-box;
@@ -172,7 +179,7 @@ transition: all 0.4s cubic-bezier(.07,.91,.14,.84) 0s;
 .complete #complete {  transform:translateY(0%); opacity:1;}
 
 
-.error { color:#E81B1F!important; display:block; }
+.error { color:#E81B1F; display:block; }
 .kiyaku label.error { margin:0; display:block;  }
 
 .error-message {
@@ -218,7 +225,6 @@ textarea:focus ~ .hint-text {
   margin-bottom: 0.5em;
 }
 .plain-language-summary p {
-  margin-bottom: 0;
   color: #666;
 }
 
@@ -336,7 +342,6 @@ footer {
 }
 footer p {
   font-size: 14px;
-  margin-bottom: 25px;
   color: #aaa;
 }
 footer nav ul {
