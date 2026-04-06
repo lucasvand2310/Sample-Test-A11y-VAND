@@ -15,12 +15,12 @@ $.ajax({
    data: {company:company,name:name,mail:mail,message:message},
    success: function(msg){
     $("html").addClass("msg");
-    $("#overlay").attr("aria-hidden", "false");
+    $("#overlay").html('<span class="visually-hidden">読み込み中...</span>');
    },
    complete: function(){
 	   setTimeout(function(){
 		$("html").removeClass("msg");
-		$("#overlay").attr("aria-hidden", "true");
+		$("#overlay").empty();
 		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 		if (prefersReducedMotion) {
 			$("body,html").stop().scrollTop(0);
@@ -28,12 +28,14 @@ $.ajax({
 			$("body,html").stop().animate({scrollTop:0},300);
 		}
 
+	$("#complete").text("送信が完了いたしました");
 	$("html").addClass("complete");
 		},2000);
 	
 	setTimeout(function(){
 		
 	$("html").removeClass("complete");
+	$("#complete").empty();
 		},8000);
 		
    }
