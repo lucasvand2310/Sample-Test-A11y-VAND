@@ -61,7 +61,7 @@ section.black a:hover { text-decoration: none; }
                flex-basis: 50%;
 			   max-width:50%;
 			   }
-#Servise ul li p { font-size:90%; margin-bottom: 1em; }
+#Servise ul li p { font-size:90%; }
 
 dl { max-width:800px; margin:0 auto; text-align:left; padding:1em 0; border-bottom:1px solid #eee; 
 display: -webkit-box;
